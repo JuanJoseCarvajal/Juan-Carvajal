@@ -1,0 +1,247 @@
+---
+import { education, experiences, works } from '../data/content';
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portafolio Astro</title>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --surface: #111827;
+        --card: #1f2937;
+        --text: #f9fafb;
+        --muted: #9ca3af;
+        --accent: #22d3ee;
+      }
+      * { box-sizing: border-box; }
+      html { scroll-behavior: smooth; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, sans-serif;
+        background: linear-gradient(160deg, var(--bg), #030712);
+        color: var(--text);
+      }
+      header {
+        position: sticky;
+        top: 0;
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid #334155;
+        z-index: 100;
+      }
+      nav {
+        max-width: 1100px;
+        margin: auto;
+        display: flex;
+        gap: 1rem;
+        padding: 1rem;
+        overflow-x: auto;
+      }
+      nav a {
+        color: var(--text);
+        text-decoration: none;
+        border: 1px solid #334155;
+        border-radius: 999px;
+        padding: .4rem .8rem;
+        white-space: nowrap;
+      }
+      nav a:hover { border-color: var(--accent); color: var(--accent); }
+      main { max-width: 1100px; margin: auto; padding: 2rem 1rem 4rem; }
+      section { padding: 3rem 0; border-bottom: 1px solid #1e293b; }
+      h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0; }
+      h2 { font-size: 1.8rem; margin-top: 0; }
+      p { color: var(--muted); line-height: 1.7; }
+      .hero { display: grid; gap: 1rem; padding-top: 1rem; }
+      .carousel {
+        display: grid;
+        grid-auto-flow: column;
+        grid-auto-columns: minmax(260px, 340px);
+        gap: 1rem;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        padding-bottom: .5rem;
+      }
+      .card {
+        scroll-snap-align: start;
+        background: var(--card);
+        border: 1px solid #334155;
+        border-radius: 1rem;
+        padding: 1rem;
+      }
+      .card h3 { margin: 0; }
+      .cta {
+        margin-top: 1rem;
+        display: inline-block;
+        background: var(--accent);
+        color: #082f49;
+        padding: .5rem .8rem;
+        border: 0;
+        border-radius: .5rem;
+        font-weight: 700;
+        cursor: pointer;
+        text-decoration: none;
+      }
+      .simple-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+        gap: 1rem;
+      }
+      form {
+        display: grid;
+        gap: .75rem;
+        max-width: 580px;
+      }
+      input, textarea {
+        width: 100%;
+        border: 1px solid #334155;
+        border-radius: .5rem;
+        background: #0b1220;
+        color: var(--text);
+        padding: .7rem;
+      }
+      .modal {
+        position: fixed;
+        inset: 0;
+        background: rgba(2, 6, 23, 0.8);
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 1rem;
+      }
+      .modal.open { display: flex; }
+      .modal-content {
+        width: min(680px, 100%);
+        background: var(--surface);
+        border-radius: 1rem;
+        border: 1px solid #334155;
+        padding: 1.25rem;
+      }
+      .modal-close {
+        float: right;
+        border: 1px solid #334155;
+        background: transparent;
+        color: var(--text);
+        border-radius: .4rem;
+        padding: .2rem .5rem;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav aria-label="Principal">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#education">Education</a>
+        <a href="#work">Work</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="about">
+        <h1>Hola, soy Juan 👋</h1>
+        <p>
+          Soy desarrollador frontend enfocado en crear experiencias digitales claras, rápidas y con impacto de negocio.
+          Este portafolio resume experiencia profesional, formación y proyectos destacados.
+        </p>
+      </section>
+
+      <section id="experience">
+        <h2>Experience</h2>
+        <div class="carousel" aria-label="Carrusel de experiencia">
+          {experiences.map((item) => (
+            <article class="card">
+              <h3>{item.role}</h3>
+              <p><strong>{item.company}</strong> · {item.period}</p>
+              <p>{item.summary}</p>
+              <button class="cta experience-cta" data-id={item.id}>Ver más</button>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="education">
+        <h2>Education</h2>
+        <div class="simple-grid">
+          {education.map((item) => (
+            <article class="card">
+              <h3>{item.title}</h3>
+              <p>{item.institution}</p>
+              <p>{item.period}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="work">
+        <h2>Work</h2>
+        <div class="simple-grid">
+          {works.map((item) => (
+            <article class="card">
+              <h3>{item.title}</h3>
+              <p>{item.shortDescription}</p>
+              <a class="cta" href={`/work/${item.slug}`}>Ver caso completo</a>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section id="contact">
+        <h2>Contact</h2>
+        <form>
+          <label>Nombre<input name="name" required /></label>
+          <label>Email<input type="email" name="email" required /></label>
+          <label>Mensaje<textarea name="message" rows="5" required></textarea></label>
+          <button class="cta" type="submit">Enviar</button>
+        </form>
+      </section>
+    </main>
+
+    <div class="modal" id="experience-modal" aria-hidden="true">
+      <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <button class="modal-close" id="close-modal">Cerrar</button>
+        <h3 id="modal-title"></h3>
+        <p id="modal-meta"></p>
+        <p id="modal-body"></p>
+      </div>
+    </div>
+
+    <script define:vars={{ experiences }}>
+      const modal = document.getElementById('experience-modal');
+      const title = document.getElementById('modal-title');
+      const meta = document.getElementById('modal-meta');
+      const body = document.getElementById('modal-body');
+      const closeBtn = document.getElementById('close-modal');
+
+      document.querySelectorAll('.experience-cta').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const found = experiences.find((item) => item.id === btn.dataset.id);
+          if (!found) return;
+          title.textContent = found.role;
+          meta.textContent = `${found.company} · ${found.period}`;
+          body.textContent = found.details;
+          modal.classList.add('open');
+          modal.setAttribute('aria-hidden', 'false');
+        });
+      });
+
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeModal();
+      });
+    </script>
+  </body>
+</html>
