@@ -11,11 +11,22 @@ import { education, experiences, works } from '../data/content';
     <link rel="stylesheet" href="/theme.css" />
     <script src="/theme.js"></script>
     <style>
+    <style>
+      :root {
+        --bg: #0f172a;
+        --surface: #111827;
+        --card: #1f2937;
+        --text: #f9fafb;
+        --muted: #9ca3af;
+        --accent: #22d3ee;
+      }
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
         font-family: Inter, system-ui, sans-serif;
+        background: linear-gradient(160deg, var(--bg), #030712);
+        color: var(--text);
       }
       header {
         position: sticky;
@@ -23,6 +34,9 @@ import { education, experiences, works } from '../data/content';
         background: var(--header-bg);
         backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--border);
+        background: rgba(15, 23, 42, 0.85);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid #334155;
         z-index: 100;
       }
       nav {
@@ -31,6 +45,7 @@ import { education, experiences, works } from '../data/content';
         display: flex;
         gap: .75rem;
         align-items: center;
+        gap: 1rem;
         padding: 1rem;
         overflow-x: auto;
       }
@@ -38,6 +53,7 @@ import { education, experiences, works } from '../data/content';
         color: var(--text);
         text-decoration: none;
         border: 1px solid var(--border);
+        border: 1px solid #334155;
         border-radius: 999px;
         padding: .4rem .8rem;
         white-space: nowrap;
@@ -45,6 +61,7 @@ import { education, experiences, works } from '../data/content';
       nav a:hover { border-color: var(--accent); color: var(--accent); }
       main { max-width: 1100px; margin: auto; padding: 2rem 1rem 4rem; }
       section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
+      section { padding: 3rem 0; border-bottom: 1px solid #1e293b; }
       h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0; }
       h2 { font-size: 1.8rem; margin-top: 0; }
       p { color: var(--muted); line-height: 1.7; }
@@ -66,11 +83,17 @@ import { education, experiences, works } from '../data/content';
         padding: 1rem;
       }
       .card h3 { margin: 0; color: var(--text); }
+        border: 1px solid #334155;
+        border-radius: 1rem;
+        padding: 1rem;
+      }
+      .card h3 { margin: 0; }
       .cta {
         margin-top: 1rem;
         display: inline-block;
         background: var(--accent);
         color: #fff;
+        color: #082f49;
         padding: .5rem .8rem;
         border: 0;
         border-radius: .5rem;
@@ -93,6 +116,9 @@ import { education, experiences, works } from '../data/content';
         border: 1px solid var(--border);
         border-radius: .5rem;
         background: var(--surface);
+        border: 1px solid #334155;
+        border-radius: .5rem;
+        background: #0b1220;
         color: var(--text);
         padding: .7rem;
       }
@@ -111,11 +137,13 @@ import { education, experiences, works } from '../data/content';
         background: var(--surface);
         border-radius: 1rem;
         border: 1px solid var(--border);
+        border: 1px solid #334155;
         padding: 1.25rem;
       }
       .modal-close {
         float: right;
         border: 1px solid var(--border);
+        border: 1px solid #334155;
         background: transparent;
         color: var(--text);
         border-radius: .4rem;
@@ -215,6 +243,7 @@ import { education, experiences, works } from '../data/content';
       const meta = document.getElementById('modal-meta');
       const body = document.getElementById('modal-body');
       const closeBtn = document.getElementById('close-modal');
+
       document.querySelectorAll('.experience-cta').forEach((btn) => {
         btn.addEventListener('click', () => {
           const found = experiences.find((item) => item.id === btn.dataset.id);
