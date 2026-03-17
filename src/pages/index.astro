@@ -11,6 +11,7 @@ import { education, experiences, works } from '../data/content';
     <link rel="stylesheet" href="/theme.css" />
     <script src="/theme.js"></script>
     <style>
+      :root { --header-height: 80px; }
     <style>
       :root {
         --bg: #0f172a;
@@ -53,6 +54,31 @@ import { education, experiences, works } from '../data/content';
         color: var(--text);
         text-decoration: none;
         border: 1px solid var(--border);
+        border-radius: 999px;
+        padding: .4rem .8rem;
+        white-space: nowrap;
+        transition: all .2s ease;
+      }
+      nav a:hover { border-color: var(--accent); color: var(--accent); }
+      nav a.is-active {
+        background: var(--accent);
+        color: #fff;
+        border-color: var(--accent);
+      }
+      main { max-width: 1100px; margin: auto; }
+      section {
+        min-height: calc(100vh - var(--header-height));
+        scroll-margin-top: calc(var(--header-height) + 6px);
+        padding: 3rem 1rem;
+        border-bottom: 1px solid var(--border);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+      }
+      h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0; }
+      h2 { font-size: 1.8rem; margin-top: 0; }
+      p { color: var(--muted); line-height: 1.7; }
+      .hero { display: grid; gap: 1rem; }
         border: 1px solid #334155;
         border-radius: 999px;
         padding: .4rem .8rem;
@@ -153,6 +179,13 @@ import { education, experiences, works } from '../data/content';
     </style>
   </head>
   <body>
+    <header id="main-header">
+      <nav aria-label="Principal">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#experience">Experience</a>
+        <a class="nav-link" href="#education">Education</a>
+        <a class="nav-link" href="#work">Work</a>
+        <a class="nav-link" href="#contact">Contact</a>
     <header>
       <nav aria-label="Principal">
         <a href="#about">About</a>
@@ -167,6 +200,7 @@ import { education, experiences, works } from '../data/content';
     </header>
 
     <main>
+      <section class="hero" id="about" data-section>
       <section class="hero" id="about">
         <h1>Hola, soy Juan 👋</h1>
         <p>
@@ -175,6 +209,7 @@ import { education, experiences, works } from '../data/content';
         </p>
       </section>
 
+      <section id="experience" data-section>
       <section id="experience">
         <h2>Experience</h2>
         <div class="carousel" aria-label="Carrusel de experiencia">
@@ -189,6 +224,7 @@ import { education, experiences, works } from '../data/content';
         </div>
       </section>
 
+      <section id="education" data-section>
       <section id="education">
         <h2>Education</h2>
         <div class="simple-grid">
@@ -202,6 +238,7 @@ import { education, experiences, works } from '../data/content';
         </div>
       </section>
 
+      <section id="work" data-section>
       <section id="work">
         <h2>Work</h2>
         <div class="simple-grid">
@@ -215,6 +252,7 @@ import { education, experiences, works } from '../data/content';
         </div>
       </section>
 
+      <section id="contact" data-section>
       <section id="contact">
         <h2>Contact</h2>
         <form>
@@ -237,6 +275,35 @@ import { education, experiences, works } from '../data/content';
 
     <script define:vars={{ experiences }}>
       window.initializeThemeSwitcher('theme-switcher');
+
+      const header = document.getElementById('main-header');
+      const links = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('[data-section]');
+
+      function updateHeaderHeight() {
+        document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+      }
+
+      function setActiveLink(id) {
+        links.forEach((link) => {
+          const active = link.getAttribute('href') === `#${id}`;
+          link.classList.toggle('is-active', active);
+          if (active) link.setAttribute('aria-current', 'page');
+          else link.removeAttribute('aria-current');
+        });
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveLink(visible.target.id);
+      }, { threshold: 0.55 });
+
+      sections.forEach((section) => observer.observe(section));
+      window.addEventListener('resize', updateHeaderHeight);
+      updateHeaderHeight();
+      setActiveLink(location.hash.replace('#', '') || 'about');
 
       const modal = document.getElementById('experience-modal');
       const title = document.getElementById('modal-title');
