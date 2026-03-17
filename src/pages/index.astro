@@ -8,6 +8,9 @@ import { education, experiences, works } from '../data/content';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portafolio Astro</title>
+    <link rel="stylesheet" href="/theme.css" />
+    <script src="/theme.js"></script>
+    <style>
     <style>
       :root {
         --bg: #0f172a;
@@ -28,6 +31,9 @@ import { education, experiences, works } from '../data/content';
       header {
         position: sticky;
         top: 0;
+        background: var(--header-bg);
+        backdrop-filter: blur(8px);
+        border-bottom: 1px solid var(--border);
         background: rgba(15, 23, 42, 0.85);
         backdrop-filter: blur(8px);
         border-bottom: 1px solid #334155;
@@ -37,6 +43,8 @@ import { education, experiences, works } from '../data/content';
         max-width: 1100px;
         margin: auto;
         display: flex;
+        gap: .75rem;
+        align-items: center;
         gap: 1rem;
         padding: 1rem;
         overflow-x: auto;
@@ -44,6 +52,7 @@ import { education, experiences, works } from '../data/content';
       nav a {
         color: var(--text);
         text-decoration: none;
+        border: 1px solid var(--border);
         border: 1px solid #334155;
         border-radius: 999px;
         padding: .4rem .8rem;
@@ -51,6 +60,7 @@ import { education, experiences, works } from '../data/content';
       }
       nav a:hover { border-color: var(--accent); color: var(--accent); }
       main { max-width: 1100px; margin: auto; padding: 2rem 1rem 4rem; }
+      section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
       section { padding: 3rem 0; border-bottom: 1px solid #1e293b; }
       h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0; }
       h2 { font-size: 1.8rem; margin-top: 0; }
@@ -68,6 +78,11 @@ import { education, experiences, works } from '../data/content';
       .card {
         scroll-snap-align: start;
         background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 1rem;
+        padding: 1rem;
+      }
+      .card h3 { margin: 0; color: var(--text); }
         border: 1px solid #334155;
         border-radius: 1rem;
         padding: 1rem;
@@ -77,6 +92,7 @@ import { education, experiences, works } from '../data/content';
         margin-top: 1rem;
         display: inline-block;
         background: var(--accent);
+        color: #fff;
         color: #082f49;
         padding: .5rem .8rem;
         border: 0;
@@ -97,6 +113,9 @@ import { education, experiences, works } from '../data/content';
       }
       input, textarea {
         width: 100%;
+        border: 1px solid var(--border);
+        border-radius: .5rem;
+        background: var(--surface);
         border: 1px solid #334155;
         border-radius: .5rem;
         background: #0b1220;
@@ -117,11 +136,13 @@ import { education, experiences, works } from '../data/content';
         width: min(680px, 100%);
         background: var(--surface);
         border-radius: 1rem;
+        border: 1px solid var(--border);
         border: 1px solid #334155;
         padding: 1.25rem;
       }
       .modal-close {
         float: right;
+        border: 1px solid var(--border);
         border: 1px solid #334155;
         background: transparent;
         color: var(--text);
@@ -139,6 +160,9 @@ import { education, experiences, works } from '../data/content';
         <a href="#education">Education</a>
         <a href="#work">Work</a>
         <a href="#contact">Contact</a>
+        <button class="theme-switcher" id="theme-switcher" type="button" aria-label="Cambiar tema">
+          🌙 Dark
+        </button>
       </nav>
     </header>
 
@@ -212,6 +236,8 @@ import { education, experiences, works } from '../data/content';
     </div>
 
     <script define:vars={{ experiences }}>
+      window.initializeThemeSwitcher('theme-switcher');
+
       const modal = document.getElementById('experience-modal');
       const title = document.getElementById('modal-title');
       const meta = document.getElementById('modal-meta');
