@@ -1,0 +1,114 @@
+---
+import { works } from '../../data/content';
+
+export function getStaticPaths() {
+  return works.map((project) => ({
+    params: { id: project.slug },
+    props: { project }
+  }));
+}
+
+const { project } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{project.title} | Work</title>
+    <link rel="stylesheet" href="/theme.css" />
+    <script src="/theme.js"></script>
+    <style>
+      * { box-sizing: border-box; }
+      body {
+        margin: 0;
+        font-family: Inter, system-ui, sans-serif;
+      }
+      header {
+        position: sticky;
+        top: 0;
+        background: var(--header-bg);
+        border-bottom: 1px solid var(--border);
+        z-index: 20;
+      }
+      nav {
+        max-width: 900px;
+        margin: auto;
+        padding: 1rem;
+        display: flex;
+        align-items: center;
+        gap: .75rem;
+      }
+      .back-link {
+        color: var(--accent);
+        text-decoration: none;
+      }
+      main {
+        max-width: 900px;
+        margin: auto;
+        padding: 2rem 1rem 4rem;
+      }
+      article {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        border-radius: 1rem;
+        padding: 1.5rem;
+      }
+      h1 {
+        margin-top: 0;
+        margin-bottom: 1rem;
+      }
+      section + section {
+        margin-top: 1.25rem;
+        padding-top: 1.25rem;
+        border-top: 1px solid var(--border);
+      }
+      h2 {
+        margin: 0 0 .5rem;
+        font-size: 1.1rem;
+      }
+      p {
+        margin: 0;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <a class="back-link" href="/#work">← Volver al listado de work</a>
+        <button class="theme-switcher" id="theme-switcher" type="button" aria-label="Cambiar tema">
+          🌙 Dark
+        </button>
+      </nav>
+    </header>
+
+    <main>
+      <article>
+        <h1>{project.title}</h1>
+        <section>
+          <h2>Resumen</h2>
+          <p>{project.shortDescription}</p>
+        </section>
+        <section>
+          <h2>Challenge</h2>
+          <p>{project.challenge}</p>
+        </section>
+        <section>
+          <h2>Solution</h2>
+          <p>{project.solution}</p>
+        </section>
+        <section>
+          <h2>Impact</h2>
+          <p>{project.impact}</p>
+        </section>
+      </article>
+    </main>
+
+    <script>
+      window.initializeThemeSwitcher('theme-switcher');
+    </script>
+  </body>
+</html>

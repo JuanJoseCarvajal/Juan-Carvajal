@@ -1,0 +1,63 @@
+:root {
+  --primary-900: #320a00;
+  --primary-800: #641401;
+  --primary-700: #951e01;
+  --primary-600: #c72802;
+  --primary-500: #f93202;
+  --primary-400: #fa5b35;
+  --primary-300: #fb8467;
+  --primary-200: #fdad9a;
+  --primary-100: #fed6cc;
+
+  --gray-900: #161616;
+  --gray-800: #2d2d2d;
+  --gray-700: #434343;
+  --gray-600: #5a5a5a;
+  --gray-500: #707070;
+  --gray-400: #8d8d8d;
+  --gray-300: #a9a9a9;
+  --gray-200: #c6c6c6;
+  --gray-100: #e2e2e2;
+
+  --bg: #f6f7f9;
+  --surface: #ffffff;
+  --card: #ffffff;
+  --text: var(--gray-900);
+  --muted: var(--gray-600);
+  --accent: var(--primary-600);
+  --border: #d7d7d7;
+  --header-bg: rgba(246, 247, 249, 0.92);
+}
+
+[data-theme='dark'] {
+  --bg: #090909;
+  --surface: #161616;
+  --card: #202020;
+  --text: #f4f4f4;
+  --muted: #c6c6c6;
+  --accent: var(--primary-400);
+  --border: #343434;
+  --header-bg: rgba(9, 9, 9, 0.9);
+}
+
+body {
+  background: linear-gradient(160deg, var(--bg), var(--gray-100));
+  color: var(--text);
+  transition: background .2s ease, color .2s ease;
+}
+
+[data-theme='dark'] body {
+  background: linear-gradient(160deg, #090909, #161616);
+}
+
+.theme-switcher {
+  margin-left: auto;
+  color: var(--text);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: .4rem .8rem;
+  cursor: pointer;
+  font-weight: 600;
+  white-space: nowrap;
+}
