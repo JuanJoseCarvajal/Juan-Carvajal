@@ -8,6 +8,8 @@ import { education, experiences, works } from '../data/content';
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Portafolio Astro</title>
+    <link rel="stylesheet" href="/theme.css" />
+    <script src="/theme.js"></script>
     <style>
       :root {
   /* 🌞 LIGHT (default) */
@@ -36,40 +38,49 @@ import { education, experiences, works } from '../data/content';
         margin: 0;
         font-family: Inter, system-ui, sans-serif;
         background: var(--surface);
+        background: var(--surface);
         color: var(--text);
       }
+
       header {
         position: sticky;
         top: 0;
+        background: var(--surface);
         background: var(--surface);
         backdrop-filter: blur(8px);
         border: 1px solid var(--border);
         z-index: 100;
       }
+
       nav {
         max-width: 1100px;
         margin: auto;
         display: flex;
         gap: 1rem;
+        align-items: center;
         padding: 1rem;
         overflow-x: auto;
       }
+
       nav a {
         color: var(--text);
         text-decoration: none;
+        border: 1px solid var(--border);
         border: 1px solid var(--border);
         border-radius: 999px;
         padding: .4rem .8rem;
         white-space: nowrap;
         align-content: center;
       }
+
       nav a:hover { border-color: var(--accent); color: var(--accent); }
       main { max-width: 1100px; margin: auto; padding: 2rem 1rem 4rem; }
       section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
       h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0; }
       h2 { font-size: 1.8rem; margin-top: 0; }
       p { color: var(--muted); line-height: 1.7; }
-      .hero { display: grid; gap: 1rem; padding-top: 1rem; }
+      .hero { display: grid; gap: 1rem; }
+
       .carousel {
         display: grid;
         grid-auto-flow: column;
@@ -79,18 +90,23 @@ import { education, experiences, works } from '../data/content';
         scroll-snap-type: x mandatory;
         padding-bottom: .5rem;
       }
+
       .card {
         scroll-snap-align: start;
         background: var(--card);
         border: 1px solid var(--border);
+        border: 1px solid var(--border);
         border-radius: 1rem;
         padding: 1rem;
       }
+
       .card h3 { margin: 0; }
+
       .cta {
         margin-top: 1rem;
         display: inline-block;
         background: var(--accent);
+        color: var(--text);
         color: var(--text);
         padding: .5rem .8rem;
         border: 0;
@@ -99,24 +115,30 @@ import { education, experiences, works } from '../data/content';
         cursor: pointer;
         text-decoration: none;
       }
+
       .simple-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 1rem;
       }
+
       form {
         display: grid;
         gap: .75rem;
         max-width: 580px;
       }
+
       input, textarea {
         width: 100%;
         border: 1px solid var(--border);
+        border: 1px solid var(--border);
         border-radius: .5rem;
+        background: var(--surface);
         background: var(--surface);
         color: var(--text);
         padding: .7rem;
       }
+
       .modal {
         position: fixed;
         inset: 0;
@@ -126,16 +148,21 @@ import { education, experiences, works } from '../data/content';
         justify-content: center;
         padding: 1rem;
       }
+
       .modal.open { display: flex; }
+
       .modal-content {
         width: min(680px, 100%);
         background: var(--surface);
         border-radius: 1rem;
         border: 1px solid var(--border);
+        border: 1px solid var(--border);
         padding: 1.25rem;
       }
+
       .modal-close {
         float: right;
+        border: 1px solid var(--border);
         border: 1px solid var(--border);
         background: transparent;
         color: var(--text);
@@ -201,7 +228,7 @@ import { education, experiences, works } from '../data/content';
     </style>
   </head>
   <body>
-    <header>
+    <header id="main-header">
       <nav aria-label="Principal">
         <a href="#about">About</a>
         <a href="#experience">Experience</a>
@@ -226,7 +253,7 @@ import { education, experiences, works } from '../data/content';
     </header>
 
     <main>
-      <section class="hero" id="about">
+      <section class="hero" id="about" data-section>
         <h1>Hola, soy Juan 👋</h1>
         <p>
           Soy desarrollador frontend enfocado en crear experiencias digitales claras, rápidas y con impacto de negocio.
@@ -234,7 +261,7 @@ import { education, experiences, works } from '../data/content';
         </p>
       </section>
 
-      <section id="experience">
+      <section id="experience" data-section>
         <h2>Experience</h2>
         <div class="carousel" aria-label="Carrusel de experiencia">
           {experiences.map((item) => (
@@ -248,7 +275,7 @@ import { education, experiences, works } from '../data/content';
         </div>
       </section>
 
-      <section id="education">
+      <section id="education" data-section>
         <h2>Education</h2>
         <div class="simple-grid">
           {education.map((item) => (
@@ -261,7 +288,7 @@ import { education, experiences, works } from '../data/content';
         </div>
       </section>
 
-      <section id="work">
+      <section id="work" data-section>
         <h2>Work</h2>
         <div class="simple-grid">
           {works.map((item) => (
@@ -274,7 +301,7 @@ import { education, experiences, works } from '../data/content';
         </div>
       </section>
 
-      <section id="contact">
+      <section id="contact" data-section>
         <h2>Contact</h2>
         <form>
           <label>Nombre<input name="name" required /></label>
@@ -295,6 +322,37 @@ import { education, experiences, works } from '../data/content';
     </div>
 
     <script define:vars={{ experiences }}>
+      window.initializeThemeSwitcher('theme-switcher');
+
+      const header = document.getElementById('main-header');
+      const links = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('[data-section]');
+
+      function updateHeaderHeight() {
+        document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+      }
+
+      function setActiveLink(id) {
+        links.forEach((link) => {
+          const active = link.getAttribute('href') === `#${id}`;
+          link.classList.toggle('is-active', active);
+          if (active) link.setAttribute('aria-current', 'page');
+          else link.removeAttribute('aria-current');
+        });
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveLink(visible.target.id);
+      }, { threshold: 0.55 });
+
+      sections.forEach((section) => observer.observe(section));
+      window.addEventListener('resize', updateHeaderHeight);
+      updateHeaderHeight();
+      setActiveLink(location.hash.replace('#', '') || 'about');
+
       const modal = document.getElementById('experience-modal');
       const title = document.getElementById('modal-title');
       const meta = document.getElementById('modal-meta');
