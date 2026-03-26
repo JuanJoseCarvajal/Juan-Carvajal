@@ -12,44 +12,35 @@ import { education, experiences, works } from '../data/content';
     <script src="/theme.js"></script>
     <style>
       :root { --header-height: 80px; }
-    <style>
-      :root {
-        --bg: #0f172a;
-        --surface: #111827;
-        --card: #1f2937;
-        --text: #f9fafb;
-        --muted: #9ca3af;
-        --accent: #22d3ee;
-      }
+
       * { box-sizing: border-box; }
       html { scroll-behavior: smooth; }
       body {
         margin: 0;
         font-family: Inter, system-ui, sans-serif;
-        background: linear-gradient(160deg, var(--bg), #030712);
+        background: var(--surface);
         color: var(--text);
       }
+
       header {
         position: sticky;
         top: 0;
-        background: var(--header-bg);
+        background: var(--surface);
         backdrop-filter: blur(8px);
         border-bottom: 1px solid var(--border);
-        background: rgba(15, 23, 42, 0.85);
-        backdrop-filter: blur(8px);
-        border-bottom: 1px solid #334155;
         z-index: 100;
       }
+
       nav {
         max-width: 1100px;
         margin: auto;
         display: flex;
-        gap: .75rem;
-        align-items: center;
         gap: 1rem;
+        align-items: center;
         padding: 1rem;
         overflow-x: auto;
       }
+
       nav a {
         color: var(--text);
         text-decoration: none;
@@ -59,15 +50,18 @@ import { education, experiences, works } from '../data/content';
         white-space: nowrap;
         transition: all .2s ease;
       }
+
       nav a:hover { border-color: var(--accent); color: var(--accent); }
       nav a.is-active {
         background: var(--accent);
         color: #fff;
         border-color: var(--accent);
       }
+
       main { max-width: 1100px; margin: auto; }
+
       section {
-        min-height: calc(100vh - var(--header-height));
+        min-height: 100vh;
         scroll-margin-top: calc(var(--header-height) + 6px);
         padding: 3rem 1rem;
         border-bottom: 1px solid var(--border);
@@ -75,23 +69,12 @@ import { education, experiences, works } from '../data/content';
         flex-direction: column;
         justify-content: center;
       }
+
       h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0; }
       h2 { font-size: 1.8rem; margin-top: 0; }
       p { color: var(--muted); line-height: 1.7; }
       .hero { display: grid; gap: 1rem; }
-        border: 1px solid #334155;
-        border-radius: 999px;
-        padding: .4rem .8rem;
-        white-space: nowrap;
-      }
-      nav a:hover { border-color: var(--accent); color: var(--accent); }
-      main { max-width: 1100px; margin: auto; padding: 2rem 1rem 4rem; }
-      section { padding: 3rem 0; border-bottom: 1px solid var(--border); }
-      section { padding: 3rem 0; border-bottom: 1px solid #1e293b; }
-      h1 { font-size: clamp(2rem, 5vw, 3rem); margin: 0; }
-      h2 { font-size: 1.8rem; margin-top: 0; }
-      p { color: var(--muted); line-height: 1.7; }
-      .hero { display: grid; gap: 1rem; padding-top: 1rem; }
+
       .carousel {
         display: grid;
         grid-auto-flow: column;
@@ -101,6 +84,7 @@ import { education, experiences, works } from '../data/content';
         scroll-snap-type: x mandatory;
         padding-bottom: .5rem;
       }
+
       .card {
         scroll-snap-align: start;
         background: var(--card);
@@ -108,18 +92,14 @@ import { education, experiences, works } from '../data/content';
         border-radius: 1rem;
         padding: 1rem;
       }
-      .card h3 { margin: 0; color: var(--text); }
-        border: 1px solid #334155;
-        border-radius: 1rem;
-        padding: 1rem;
-      }
+
       .card h3 { margin: 0; }
+
       .cta {
         margin-top: 1rem;
         display: inline-block;
         background: var(--accent);
-        color: #fff;
-        color: #082f49;
+        color: var(--text);
         padding: .5rem .8rem;
         border: 0;
         border-radius: .5rem;
@@ -127,27 +107,28 @@ import { education, experiences, works } from '../data/content';
         cursor: pointer;
         text-decoration: none;
       }
+
       .simple-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
         gap: 1rem;
       }
+
       form {
         display: grid;
         gap: .75rem;
         max-width: 580px;
       }
+
       input, textarea {
         width: 100%;
         border: 1px solid var(--border);
         border-radius: .5rem;
         background: var(--surface);
-        border: 1px solid #334155;
-        border-radius: .5rem;
-        background: #0b1220;
         color: var(--text);
         padding: .7rem;
       }
+
       .modal {
         position: fixed;
         inset: 0;
@@ -157,19 +138,20 @@ import { education, experiences, works } from '../data/content';
         justify-content: center;
         padding: 1rem;
       }
+
       .modal.open { display: flex; }
+
       .modal-content {
         width: min(680px, 100%);
         background: var(--surface);
         border-radius: 1rem;
         border: 1px solid var(--border);
-        border: 1px solid #334155;
         padding: 1.25rem;
       }
+
       .modal-close {
         float: right;
         border: 1px solid var(--border);
-        border: 1px solid #334155;
         background: transparent;
         color: var(--text);
         border-radius: .4rem;
@@ -186,13 +168,6 @@ import { education, experiences, works } from '../data/content';
         <a class="nav-link" href="#education">Education</a>
         <a class="nav-link" href="#work">Work</a>
         <a class="nav-link" href="#contact">Contact</a>
-    <header>
-      <nav aria-label="Principal">
-        <a href="#about">About</a>
-        <a href="#experience">Experience</a>
-        <a href="#education">Education</a>
-        <a href="#work">Work</a>
-        <a href="#contact">Contact</a>
         <button class="theme-switcher" id="theme-switcher" type="button" aria-label="Cambiar tema">
           🌙 Dark
         </button>
@@ -201,7 +176,6 @@ import { education, experiences, works } from '../data/content';
 
     <main>
       <section class="hero" id="about" data-section>
-      <section class="hero" id="about">
         <h1>Hola, soy Juan 👋</h1>
         <p>
           Soy desarrollador frontend enfocado en crear experiencias digitales claras, rápidas y con impacto de negocio.
@@ -210,7 +184,6 @@ import { education, experiences, works } from '../data/content';
       </section>
 
       <section id="experience" data-section>
-      <section id="experience">
         <h2>Experience</h2>
         <div class="carousel" aria-label="Carrusel de experiencia">
           {experiences.map((item) => (
@@ -225,7 +198,6 @@ import { education, experiences, works } from '../data/content';
       </section>
 
       <section id="education" data-section>
-      <section id="education">
         <h2>Education</h2>
         <div class="simple-grid">
           {education.map((item) => (
@@ -239,7 +211,6 @@ import { education, experiences, works } from '../data/content';
       </section>
 
       <section id="work" data-section>
-      <section id="work">
         <h2>Work</h2>
         <div class="simple-grid">
           {works.map((item) => (
@@ -253,7 +224,6 @@ import { education, experiences, works } from '../data/content';
       </section>
 
       <section id="contact" data-section>
-      <section id="contact">
         <h2>Contact</h2>
         <form>
           <label>Nombre<input name="name" required /></label>
