@@ -9,8 +9,6 @@ export function getStaticPaths() {
 }
 
 const { project } = Astro.props;
-const { id } = Astro.params;
-const project = works.find((item) => item.slug === id);
 
 if (!project) {
   return Astro.redirect('/');
@@ -24,12 +22,14 @@ if (!project) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{project.title} | Work</title>
     <link rel="stylesheet" href="/theme.css" />
-    <script src="/theme.js"></script>
+    <script is:inline src="/theme.js"></script>
     <style>
       * { box-sizing: border-box; }
       body {
         margin: 0;
         font-family: Inter, system-ui, sans-serif;
+        background: var(--surface);
+        color: var(--text);
       }
       header {
         position: sticky;
@@ -49,13 +49,6 @@ if (!project) {
       .back-link {
         color: var(--accent);
         text-decoration: none;
-    <title>{project.title}</title>
-    <style>
-      body {
-        margin: 0;
-        font-family: Inter, system-ui, sans-serif;
-        background: #020617;
-        color: #f8fafc;
       }
       main {
         max-width: 900px;
@@ -123,27 +116,5 @@ if (!project) {
     <script>
       window.initializeThemeSwitcher('theme-switcher');
     </script>
-        padding: 2rem 1rem;
-      }
-      article {
-        border: 1px solid #334155;
-        background: #0f172a;
-        border-radius: 1rem;
-        padding: 1.5rem;
-      }
-      p { color: #cbd5e1; line-height: 1.7; }
-      a { color: #22d3ee; }
-    </style>
-  </head>
-  <body>
-    <main>
-      <a href="/#work">← Volver al listado de work</a>
-      <article>
-        <h1>{project.title}</h1>
-        <p><strong>Challenge:</strong> {project.challenge}</p>
-        <p><strong>Solution:</strong> {project.solution}</p>
-        <p><strong>Impact:</strong> {project.impact}</p>
-      </article>
-    </main>
   </body>
 </html>
