@@ -81,7 +81,6 @@ import { education, experiences, works } from '../data/content';
         min-height: 100vh;
         scroll-margin-top: calc(var(--header-height) + 6px);
         padding: 3rem 1rem;
-        border-bottom: 1px solid var(--border);
         display: flex;
         flex-direction: column;
         justify-content: center;
@@ -207,12 +206,20 @@ import { education, experiences, works } from '../data/content';
 
     <main>
       <section class="hero" id="about" data-section>
-        <img class="about-banner" src="/about-banner.svg" alt="Banner de la sección about" data-i18n-alt="about_banner_alt" />
-        <h1 data-i18n="about_title">Hola, soy Juan 👋</h1>
-        <p data-i18n="about_text">
-          Soy desarrollador frontend enfocado en crear experiencias digitales claras, rápidas y con impacto de negocio.
-          Este portafolio resume experiencia profesional, formación y proyectos destacados.
-        </p>
+        <h1>Hi, I'm Juan 👋</h1>
+        <p>For over 12 years, I’ve been drawn to a simple question: why do some digital experiences feel effortless, while others create friction we can’t always explain? That curiosity is what led me to design not just interfaces, but the invisible logic behind how people think, feel, and move through technology.</p>
+
+        <p>Throughout my journey, I’ve evolved into an Experience Architect, working at the intersection of human behavior, design, and business strategy. I see every product as a living system one that must balance user needs, business goals, and technical realities. My role is to bring clarity to that complexity, shaping experiences that feel natural while delivering real impact.</p>
+        
+        <p>My work is deeply influenced by psychology, psychoanalysis, and human factors. I pay attention to the subtle patterns—the hesitation before a click, the confusion in a flow, the moments where users feel either in control or lost. By understanding these signals, I design experiences that anticipate needs, reduce cognitive load, and create a sense of flow that users may not consciously notice but always feel.</p>
+        
+        <p>Over time, I’ve learned that great design is not just about usability it’s about alignment. Alignment between what a user needs and what a business is trying to achieve. Whether I’m refining an ecommerce journey, structuring a complex platform, or building a scalable design system, I approach each challenge with a strategic mindset connecting decisions to outcomes like growth, retention, and long term product value.</p>
+        
+        <p>I’m also someone who enjoys bridging worlds. With experience in user research, information architecture, and front end development, I move comfortably from abstract concepts to tangible solutions. I collaborate closely with teams product managers, engineers, stakeholders turning ideas into experiences that are not only functional, but meaningful.</p>
+        
+        <p>At the heart of it all, I believe design is a form of care. It’s about removing unnecessary effort, creating clarity where there is confusion, and building products that respect people’s time and attention. When done well, design doesn’t call attention to itself—it simply works, feels right, and allows people to move forward with ease.</p>
+        
+        <p>That’s the kind of experience I strive to create every day.</p>
       </section>
 
       <section id="experience" data-section>
@@ -220,13 +227,9 @@ import { education, experiences, works } from '../data/content';
         <div class="carousel" aria-label="Carrusel de experiencia" data-i18n-aria-label="experience_carousel_aria">
           {experiences.map((item) => (
             <article class="card">
-              <h3 data-i18n-experience-role={item.id}>{item.role}</h3>
-              <p>
-                <strong data-i18n-experience-company={item.id}>{item.company}</strong>
-                {' · '}
-                <span data-i18n-experience-period={item.id}>{item.period}</span>
-              </p>
-              <p data-i18n-experience-summary={item.id}>{item.summary}</p>
+              <h3>{item.role}</h3>
+              <p><strong>{item.company}</strong> · {item.period}</p>
+              <p>{item.summary}</p>
               <button class="cta experience-cta" data-id={item.id}><span data-i18n="see_more">Ver más</span></button>
             </article>
           ))}
@@ -251,8 +254,8 @@ import { education, experiences, works } from '../data/content';
         <div class="simple-grid">
           {works.map((item) => (
             <article class="card">
-              <h3 data-i18n-work-title={item.slug}>{item.title}</h3>
-              <p data-i18n-work-description={item.slug}>{item.shortDescription}</p>
+              <h3>{item.title}</h3>
+              <p>{item.shortDescription}</p>
               <a class="cta" href={`/work/${item.slug}`} data-i18n="full_case">Ver caso completo</a>
             </article>
           ))}
@@ -286,13 +289,11 @@ import { education, experiences, works } from '../data/content';
       const links = document.querySelectorAll('.nav-link');
       const sections = document.querySelectorAll('[data-section]');
       const languageSelect = document.getElementById('language-select');
-      let currentLanguage = 'es';
-      let activeExperienceId = null;
 
       const translations = {
         es: {
           nav_aria: 'Principal',
-          nav_about: 'Sobre mí',
+          nav_about: 'About',
           nav_experience: 'Experiencia',
           nav_education: 'Educación',
           nav_work: 'Proyectos',
@@ -338,171 +339,9 @@ import { education, experiences, works } from '../data/content';
         }
       };
 
-      const contentTranslations = {
-        es: {
-          experiences: {
-            'frontend-lead': {
-              role: 'Frontend Lead',
-              company: 'Nova Studio',
-              period: '2022 - Presente',
-              summary: 'Lideré la evolución del design system y la arquitectura frontend.',
-              details:
-                'Impulsé una migración progresiva a componentes reutilizables, mejorando la velocidad de entrega y la consistencia visual. Coordiné equipo de 5 devs y trabajé junto al área de producto para priorizar funcionalidades de alto impacto.'
-            },
-            'ux-engineer': {
-              role: 'UX Engineer',
-              company: 'Pixel Factory',
-              period: '2020 - 2022',
-              summary: 'Conecté diseño y desarrollo con prototipos accesibles y medibles.',
-              details:
-                'Construí librerías de patrones, ejecuté pruebas de usabilidad y optimicé flujos críticos. El resultado fue una reducción del 20% en abandono de formularios y mayor satisfacción del cliente final.'
-            },
-            'web-developer': {
-              role: 'Web Developer',
-              company: 'Freelance',
-              period: '2018 - 2020',
-              summary: 'Desarrollé sitios y landings para startups y pymes.',
-              details:
-                'Implementé soluciones en JAMstack, SEO técnico y analítica digital para proyectos de comercio y servicios. Varias implementaciones superaron 90 puntos en Lighthouse en performance y accesibilidad.'
-            }
-          },
-          education: [
-            {
-              title: 'Ingeniería en Sistemas',
-              institution: 'Universidad Tecnológica',
-              period: '2014 - 2018'
-            },
-            {
-              title: 'Diplomado en UX/UI',
-              institution: 'Academia Interactiva',
-              period: '2019'
-            }
-          ],
-          works: {
-            'dashboard-analytics': {
-              title: 'Dashboard de Analytics',
-              shortDescription: 'Panel de métricas para equipo comercial en tiempo real.'
-            },
-            'ecommerce-redesign': {
-              title: 'Rediseño E-commerce',
-              shortDescription: 'Mejora integral del flujo de compra para mobile.'
-            }
-          }
-        },
-        en: {
-          experiences: {
-            'frontend-lead': {
-              role: 'Frontend Lead',
-              company: 'Nova Studio',
-              period: '2022 - Present',
-              summary: 'Led the evolution of the design system and frontend architecture.',
-              details:
-                'Drove a progressive migration to reusable components, improving delivery speed and visual consistency. Coordinated a team of 5 developers and worked with product to prioritize high-impact features.'
-            },
-            'ux-engineer': {
-              role: 'UX Engineer',
-              company: 'Pixel Factory',
-              period: '2020 - 2022',
-              summary: 'Bridged design and engineering with accessible, measurable prototypes.',
-              details:
-                'Built pattern libraries, ran usability testing, and optimized critical user flows. The result was a 20% reduction in form abandonment and higher end-user satisfaction.'
-            },
-            'web-developer': {
-              role: 'Web Developer',
-              company: 'Freelance',
-              period: '2018 - 2020',
-              summary: 'Built websites and landing pages for startups and SMBs.',
-              details:
-                'Implemented JAMstack solutions, technical SEO, and digital analytics for commerce and service projects. Several implementations scored above 90 in Lighthouse performance and accessibility.'
-            }
-          },
-          education: [
-            {
-              title: 'Systems Engineering',
-              institution: 'Technological University',
-              period: '2014 - 2018'
-            },
-            {
-              title: 'UX/UI Diploma',
-              institution: 'Interactive Academy',
-              period: '2019'
-            }
-          ],
-          works: {
-            'dashboard-analytics': {
-              title: 'Analytics Dashboard',
-              shortDescription: 'Real-time metrics dashboard for the sales team.'
-            },
-            'ecommerce-redesign': {
-              title: 'E-commerce Redesign',
-              shortDescription: 'End-to-end improvement of the mobile purchase flow.'
-            }
-          }
-        }
-      };
-
-      function updateDynamicContent(lang) {
-        const localeContent = contentTranslations[lang] ?? contentTranslations.es;
-
-        document.querySelectorAll('[data-i18n-experience-role]').forEach((node) => {
-          const id = node.dataset.i18nExperienceRole;
-          const value = localeContent.experiences[id]?.role;
-          if (value) node.textContent = value;
-        });
-
-        document.querySelectorAll('[data-i18n-experience-company]').forEach((node) => {
-          const id = node.dataset.i18nExperienceCompany;
-          const value = localeContent.experiences[id]?.company;
-          if (value) node.textContent = value;
-        });
-
-        document.querySelectorAll('[data-i18n-experience-period]').forEach((node) => {
-          const id = node.dataset.i18nExperiencePeriod;
-          const value = localeContent.experiences[id]?.period;
-          if (value) node.textContent = value;
-        });
-
-        document.querySelectorAll('[data-i18n-experience-summary]').forEach((node) => {
-          const id = node.dataset.i18nExperienceSummary;
-          const value = localeContent.experiences[id]?.summary;
-          if (value) node.textContent = value;
-        });
-
-        document.querySelectorAll('[data-i18n-education-title]').forEach((node) => {
-          const index = Number(node.dataset.i18nEducationTitle);
-          const value = localeContent.education[index]?.title;
-          if (value) node.textContent = value;
-        });
-
-        document.querySelectorAll('[data-i18n-education-institution]').forEach((node) => {
-          const index = Number(node.dataset.i18nEducationInstitution);
-          const value = localeContent.education[index]?.institution;
-          if (value) node.textContent = value;
-        });
-
-        document.querySelectorAll('[data-i18n-education-period]').forEach((node) => {
-          const index = Number(node.dataset.i18nEducationPeriod);
-          const value = localeContent.education[index]?.period;
-          if (value) node.textContent = value;
-        });
-
-        document.querySelectorAll('[data-i18n-work-title]').forEach((node) => {
-          const slug = node.dataset.i18nWorkTitle;
-          const value = localeContent.works[slug]?.title;
-          if (value) node.textContent = value;
-        });
-
-        document.querySelectorAll('[data-i18n-work-description]').forEach((node) => {
-          const slug = node.dataset.i18nWorkDescription;
-          const value = localeContent.works[slug]?.shortDescription;
-          if (value) node.textContent = value;
-        });
-      }
-
       function applyLanguage(lang) {
         const selectedLanguage = translations[lang] ? lang : 'es';
         const dictionary = translations[selectedLanguage];
-        currentLanguage = selectedLanguage;
 
         document.documentElement.lang = selectedLanguage;
 
@@ -520,9 +359,6 @@ import { education, experiences, works } from '../data/content';
           const key = node.dataset.i18nAlt;
           if (dictionary[key]) node.setAttribute('alt', dictionary[key]);
         });
-
-        updateDynamicContent(selectedLanguage);
-        if (activeExperienceId) renderExperienceModal(activeExperienceId, selectedLanguage);
 
         localStorage.setItem('language', selectedLanguage);
         if (languageSelect) languageSelect.value = selectedLanguage;
