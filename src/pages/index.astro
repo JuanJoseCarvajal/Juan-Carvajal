@@ -206,20 +206,8 @@ import { education, experiences, works } from '../data/content';
 
     <main>
       <section class="hero" id="about" data-section>
-        <h1>Hi, I'm Juan 👋</h1>
-        <p>For over 12 years, I’ve been drawn to a simple question: why do some digital experiences feel effortless, while others create friction we can’t always explain? That curiosity is what led me to design not just interfaces, but the invisible logic behind how people think, feel, and move through technology.</p>
-
-        <p>Throughout my journey, I’ve evolved into an Experience Architect, working at the intersection of human behavior, design, and business strategy. I see every product as a living system one that must balance user needs, business goals, and technical realities. My role is to bring clarity to that complexity, shaping experiences that feel natural while delivering real impact.</p>
-        
-        <p>My work is deeply influenced by psychology, psychoanalysis, and human factors. I pay attention to the subtle patterns—the hesitation before a click, the confusion in a flow, the moments where users feel either in control or lost. By understanding these signals, I design experiences that anticipate needs, reduce cognitive load, and create a sense of flow that users may not consciously notice but always feel.</p>
-        
-        <p>Over time, I’ve learned that great design is not just about usability it’s about alignment. Alignment between what a user needs and what a business is trying to achieve. Whether I’m refining an ecommerce journey, structuring a complex platform, or building a scalable design system, I approach each challenge with a strategic mindset connecting decisions to outcomes like growth, retention, and long term product value.</p>
-        
-        <p>I’m also someone who enjoys bridging worlds. With experience in user research, information architecture, and front end development, I move comfortably from abstract concepts to tangible solutions. I collaborate closely with teams product managers, engineers, stakeholders turning ideas into experiences that are not only functional, but meaningful.</p>
-        
-        <p>At the heart of it all, I believe design is a form of care. It’s about removing unnecessary effort, creating clarity where there is confusion, and building products that respect people’s time and attention. When done well, design doesn’t call attention to itself—it simply works, feels right, and allows people to move forward with ease.</p>
-        
-        <p>That’s the kind of experience I strive to create every day.</p>
+        <h1 data-i18n="about_title">Hola, soy Juan 👋</h1>
+        <p data-i18n="about_text">Durante más de 12 años, me ha movido una pregunta sencilla: ¿por qué algunas experiencias digitales se sienten naturales y fluidas, mientras otras generan fricción que no siempre sabemos explicar? Esa curiosidad fue lo que me llevó al diseño: no solo de interfaces, sino de la lógica invisible detrás de cómo las personas piensan, sienten y se mueven dentro de la tecnología. Con el tiempo, he evolucionado hacia el rol de Experience Architect, trabajando en la intersección entre comportamiento humano, diseño y estrategia de negocio. Para mí, cada producto es un sistema vivo donde deben alinearse las necesidades del usuario, los objetivos del negocio y la realidad técnica. Mi trabajo consiste en dar claridad a esa complejidad y transformar esa tensión en experiencias que se sientan naturales y generen impacto real. Mi enfoque está fuertemente influenciado por la psicología, el psicoanálisis y los factores humanos. Me interesa observar lo sutil: la pausa antes de un clic, la duda en un flujo, el momento en que el usuario se siente perdido o, por el contrario, totalmente en control. A partir de ahí, diseño experiencias que anticipan necesidades, reducen la carga cognitiva y generan una sensación de fluidez que, aunque no siempre se nota, siempre se siente. Con los años he entendido que el buen diseño no es solo usabilidad, es alineación. Alineación entre lo que el usuario necesita y lo que el negocio busca lograr. Ya sea optimizando un viaje de e-commerce, estructurando una plataforma compleja o construyendo sistemas de diseño escalables, abordo cada reto con una mentalidad estratégica, conectando cada decisión con resultados como crecimiento, retención y valor a largo plazo. También disfruto ser un puente entre mundos. Mi experiencia en investigación de usuarios, arquitectura de la información y desarrollo front-end me permite moverme con fluidez entre la estrategia y la ejecución, aterrizando ideas en soluciones concretas. Trabajo de cerca con equipos multidisciplinarios — producto, tecnología y stakeholders — para construir experiencias que no solo funcionen, sino que tengan sentido. En el fondo, creo que diseñar es una forma de cuidado. Es quitar lo innecesario, dar claridad donde hay confusión y crear productos que respeten el tiempo y la atención de las personas. Cuando el diseño está bien hecho, no llama la atención, simplemente fluye, se siente correcto y permite avanzar sin esfuerzo. Ese es el tipo de experiencia que me esfuerzo por crear cada día.</p>
       </section>
 
       <section id="experience" data-section>
@@ -289,6 +277,16 @@ import { education, experiences, works } from '../data/content';
       const links = document.querySelectorAll('.nav-link');
       const sections = document.querySelectorAll('[data-section]');
       const languageSelect = document.getElementById('language-select');
+      let currentLanguage = 'es';
+
+      const contentTranslations = {
+        es: {
+          experiences: Object.fromEntries(experiences.map((item) => [item.id, item]))
+        },
+        en: {
+          experiences: Object.fromEntries(experiences.map((item) => [item.id, item]))
+        }
+      };
 
       const translations = {
         es: {
@@ -301,7 +299,7 @@ import { education, experiences, works } from '../data/content';
           lang_aria: 'Selector de idioma',
           about_banner_alt: 'Banner de la sección about',
           about_title: 'Hola, soy Juan 👋',
-          about_text: 'Soy desarrollador frontend enfocado en crear experiencias digitales claras, rápidas y con impacto de negocio. Este portafolio resume experiencia profesional, formación y proyectos destacados.',
+          about_text: 'Durante más de 12 años, me ha movido una pregunta sencilla: ¿por qué algunas experiencias digitales se sienten naturales y fluidas, mientras otras generan fricción que no siempre sabemos explicar? Esa curiosidad fue lo que me llevó al diseño—no solo de interfaces, sino de la lógica invisible detrás de cómo las personas piensan, sienten y se mueven dentro de la tecnología. Con el tiempo, he evolucionado hacia el rol de Experience Architect, trabajando en la intersección entre comportamiento humano, diseño y estrategia de negocio. Para mí, cada producto es un sistema vivo, donde deben alinearse las necesidades del usuario, los objetivos del negocio y las posibilidades tecnológicas. Mi trabajo consiste en dar claridad a esa complejidad y transformar esa tensión en experiencias que se sientan naturales y generen impacto real. Mi enfoque está profundamente influenciado por la psicología, el psicoanálisis y los factores humanos. Me interesa observar lo sutil: la pausa antes de un clic, la duda en un flujo, ese momento en que el usuario se siente perdido o, por el contrario, completamente en control. A partir de ahí, diseño experiencias que anticipan necesidades, reducen la carga cognitiva y generan una sensación de fluidez que, aunque muchas veces pasa desapercibida, siempre se percibe. Con los años he entendido que el buen diseño no es solo usabilidad, sino alineación. Alineación entre lo que el usuario necesita y lo que el negocio busca lograr. Ya sea optimizando un funnel de e-commerce, estructurando una plataforma compleja o construyendo sistemas de diseño escalables, abordo cada reto desde una mirada estratégica, conectando cada decisión con resultados como crecimiento, retención y valor a largo plazo. También disfruto ser un puente entre mundos. Mi experiencia en user research, arquitectura de información y desarrollo front-end me permite moverme con fluidez entre la estrategia y la ejecución, aterrizando ideas en soluciones concretas. Trabajo de cerca con equipos multidisciplinarios—producto, tecnología y stakeholders—para construir experiencias que no solo funcionen, sino que tengan sentido. En el fondo, creo que diseñar es una forma de cuidado. Es quitar lo innecesario, dar claridad donde hay confusión y crear productos que respeten el tiempo y la atención de las personas. Cuando el diseño está bien hecho, no se nota: simplemente fluye, se siente correcto y permite avanzar sin esfuerzo. Ese es el tipo de experiencia que busco crear todos los días.',
           experience_title: 'Experiencia',
           education_title: 'Educación',
           work_title: 'Proyectos',
@@ -324,7 +322,7 @@ import { education, experiences, works } from '../data/content';
           lang_aria: 'Language selector',
           about_banner_alt: 'About section banner',
           about_title: 'Hi, I am Juan 👋',
-          about_text: 'I am a frontend developer focused on creating clear, fast digital experiences with business impact. This portfolio highlights my professional experience, education, and featured projects.',
+          about_text: 'For over 12 years, I’ve been drawn to a simple question: why do some digital experiences feel effortless, while others create friction we can’t always explain? That curiosity is what led me to design—not just interfaces, but the invisible logic behind how people think, feel, and move through technology. Throughout my journey, I’ve evolved into an Experience Architect, working at the intersection of human behavior, design, and business strategy. I see every product as a living system—one that must balance user needs, business goals, and technical realities. My role is to bring clarity to that complexity, shaping experiences that feel natural while delivering real impact. My work is deeply influenced by psychology, psychoanalysis, and human factors. I pay attention to the subtle patterns—the hesitation before a click, the confusion in a flow, the moments where users feel either in control or lost. By understanding these signals, I design experiences that anticipate needs, reduce cognitive load, and create a sense of flow that users may not consciously notice—but always feel. Over time, I’ve learned that great design is not just about usability—it’s about alignment. Alignment between what a user needs and what a business is trying to achieve. Whether I’m refining an e-commerce journey, structuring a complex platform, or building a scalable design system, I approach each challenge with a strategic mindset—connecting decisions to outcomes like growth, retention, and long-term product value. I’m also someone who enjoys bridging worlds. With experience in user research, information architecture, and front-end development, I move comfortably from abstract concepts to tangible solutions. I collaborate closely with teams—product managers, engineers, stakeholders—turning ideas into experiences that are not only functional, but meaningful. At the heart of it all, I believe design is a form of care. It’s about removing unnecessary effort, creating clarity where there is confusion, and building products that respect people’s time and attention. When done well, design doesn’t call attention to itself—it simply works, feels right, and allows people to move forward with ease.',
           experience_title: 'Experience',
           education_title: 'Education',
           work_title: 'Work',
@@ -343,6 +341,7 @@ import { education, experiences, works } from '../data/content';
         const selectedLanguage = translations[lang] ? lang : 'es';
         const dictionary = translations[selectedLanguage];
 
+        currentLanguage = selectedLanguage;
         document.documentElement.lang = selectedLanguage;
 
         document.querySelectorAll('[data-i18n]').forEach((node) => {
