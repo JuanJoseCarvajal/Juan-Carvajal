@@ -45,7 +45,6 @@ import { education, experiences, works } from '../data/content';
         color: var(--text);
         text-decoration: none;
         border: 1px solid var(--border);
-        border: 1px solid var(--border);
         border-radius: 999px;
         padding: .4rem .8rem;
         white-space: nowrap;
@@ -57,6 +56,23 @@ import { education, experiences, works } from '../data/content';
         background: var(--accent);
         color: #fff;
         border-color: var(--accent);
+      }
+
+      .nav-controls {
+        margin-left: auto;
+        display: flex;
+        gap: .6rem;
+        align-items: center;
+      }
+
+      .lang-select,
+      .theme-switcher {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--text);
+        padding: .4rem .8rem;
+        font: inherit;
       }
 
       main { max-width: 1100px; margin: auto; }
@@ -76,6 +92,14 @@ import { education, experiences, works } from '../data/content';
       p { color: var(--muted); line-height: 1.7; }
       .hero { display: grid; gap: 1rem; }
 
+      .about-banner {
+        width: 100%;
+        aspect-ratio: 16 / 6;
+        object-fit: cover;
+        border-radius: 1rem;
+        border: 1px solid var(--border);
+      }
+
       .carousel {
         display: grid;
         grid-auto-flow: column;
@@ -89,7 +113,6 @@ import { education, experiences, works } from '../data/content';
       .card {
         scroll-snap-align: start;
         background: var(--card);
-        border: 1px solid var(--border);
         border: 1px solid var(--border);
         border-radius: 1rem;
         padding: 1rem;
@@ -124,7 +147,6 @@ import { education, experiences, works } from '../data/content';
 
       input, textarea {
         width: 100%;
-        border: 1px solid var(--border);
         border: 1px solid var(--border);
         border-radius: .5rem;
         background: var(--surface);
@@ -161,153 +183,350 @@ import { education, experiences, works } from '../data/content';
         padding: .2rem .5rem;
         cursor: pointer;
       }
-      .theme-toggle {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  width: 40px;
-  height: 40px;
-
-  border-radius: 999px;
-  border: 1px solid var(--border);
-
-  background: var(--surface);
-  color: var(--text);
-
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.theme-toggle:hover {
-  border-color: var(--accent);
-  color: var(--accent);
-}
-
-/* icon base */
-.icon {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  transition: all 0.3s ease;
-}
-
-/* default (light mode) */
-.sun {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
-}
-
-.moon {
-  opacity: 0;
-  transform: rotate(90deg) scale(0.5);
-}
-
-/* dark mode */
-.dark .sun {
-  opacity: 0;
-  transform: rotate(-90deg) scale(0.5);
-}
-
-.dark .moon {
-  opacity: 1;
-  transform: rotate(0deg) scale(1);
-}
-.theme-toggle {
-  position: relative;
-}
     </style>
   </head>
   <body>
     <header id="main-header">
-      <nav aria-label="Principal">
-        <a class="nav-link" href="#about">About</a>
-        <a class="nav-link" href="#experience">Experience</a>
-        <a class="nav-link" href="#education">Education</a>
-        <a class="nav-link" href="#work">Work</a>
-        <a class="nav-link" href="#contact">Contact</a>
-        <button class="theme-switcher" id="theme-switcher" type="button" aria-label="Cambiar tema">
-          🌙 Dark
-        </button>
+      <nav aria-label="Principal" data-i18n-aria-label="nav_aria">
+        <a class="nav-link" href="#about" data-i18n="nav_about">About</a>
+        <a class="nav-link" href="#experience" data-i18n="nav_experience">Experience</a>
+        <a class="nav-link" href="#education" data-i18n="nav_education">Education</a>
+        <a class="nav-link" href="#work" data-i18n="nav_work">Work</a>
+        <a class="nav-link" href="#contact" data-i18n="nav_contact">Contact</a>
+        <div class="nav-controls">
+          <select id="language-select" class="lang-select" aria-label="Selector de idioma" data-i18n-aria-label="lang_aria">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
+          <button class="theme-switcher" id="theme-switcher" type="button" aria-label="Cambiar tema">
+            🌙 Dark
+          </button>
+        </div>
       </nav>
-      
     </header>
 
     <main>
       <section class="hero" id="about" data-section>
-        <h1>Hola, soy Juan 👋</h1>
-        <p>
+        <img class="about-banner" src="/about-banner.svg" alt="Banner de la sección about" data-i18n-alt="about_banner_alt" />
+        <h1 data-i18n="about_title">Hola, soy Juan 👋</h1>
+        <p data-i18n="about_text">
           Soy desarrollador frontend enfocado en crear experiencias digitales claras, rápidas y con impacto de negocio.
           Este portafolio resume experiencia profesional, formación y proyectos destacados.
         </p>
       </section>
 
       <section id="experience" data-section>
-        <h2>Experience</h2>
-        <div class="carousel" aria-label="Carrusel de experiencia">
+        <h2 data-i18n="experience_title">Experience</h2>
+        <div class="carousel" aria-label="Carrusel de experiencia" data-i18n-aria-label="experience_carousel_aria">
           {experiences.map((item) => (
             <article class="card">
-              <h3>{item.role}</h3>
-              <p><strong>{item.company}</strong> · {item.period}</p>
-              <p>{item.summary}</p>
-              <button class="cta experience-cta" data-id={item.id}>Ver más</button>
+              <h3 data-i18n-experience-role={item.id}>{item.role}</h3>
+              <p>
+                <strong data-i18n-experience-company={item.id}>{item.company}</strong>
+                {' · '}
+                <span data-i18n-experience-period={item.id}>{item.period}</span>
+              </p>
+              <p data-i18n-experience-summary={item.id}>{item.summary}</p>
+              <button class="cta experience-cta" data-id={item.id}><span data-i18n="see_more">Ver más</span></button>
             </article>
           ))}
         </div>
       </section>
 
       <section id="education" data-section>
-        <h2>Education</h2>
+        <h2 data-i18n="education_title">Education</h2>
         <div class="simple-grid">
-          {education.map((item) => (
+          {education.map((item, index) => (
             <article class="card">
-              <h3>{item.title}</h3>
-              <p>{item.institution}</p>
-              <p>{item.period}</p>
+              <h3 data-i18n-education-title={index}>{item.title}</h3>
+              <p data-i18n-education-institution={index}>{item.institution}</p>
+              <p data-i18n-education-period={index}>{item.period}</p>
             </article>
           ))}
         </div>
       </section>
 
       <section id="work" data-section>
-        <h2>Work</h2>
+        <h2 data-i18n="work_title">Work</h2>
         <div class="simple-grid">
           {works.map((item) => (
             <article class="card">
-              <h3>{item.title}</h3>
-              <p>{item.shortDescription}</p>
-              <a class="cta" href={`/work/${item.slug}`}>Ver caso completo</a>
+              <h3 data-i18n-work-title={item.slug}>{item.title}</h3>
+              <p data-i18n-work-description={item.slug}>{item.shortDescription}</p>
+              <a class="cta" href={`/work/${item.slug}`} data-i18n="full_case">Ver caso completo</a>
             </article>
           ))}
         </div>
       </section>
 
       <section id="contact" data-section>
-        <h2>Contact</h2>
+        <h2 data-i18n="contact_title">Contact</h2>
         <form>
-          <label>Nombre<input name="name" required /></label>
-          <label>Email<input type="email" name="email" required /></label>
-          <label>Mensaje<textarea name="message" rows="5" required></textarea></label>
-          <button class="cta" type="submit">Enviar</button>
+          <label><span data-i18n="name">Nombre</span><input name="name" required /></label>
+          <label><span data-i18n="email">Email</span><input type="email" name="email" required /></label>
+          <label><span data-i18n="message">Mensaje</span><textarea name="message" rows="5" required></textarea></label>
+          <button class="cta" type="submit" data-i18n="send">Enviar</button>
         </form>
       </section>
     </main>
 
     <div class="modal" id="experience-modal" aria-hidden="true">
       <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button class="modal-close" id="close-modal">Cerrar</button>
+        <button class="modal-close" id="close-modal" data-i18n="close">Cerrar</button>
         <h3 id="modal-title"></h3>
         <p id="modal-meta"></p>
         <p id="modal-body"></p>
       </div>
     </div>
 
-    <script define:vars={{ experiences }}>
+    <script>
       window.initializeThemeSwitcher('theme-switcher');
 
       const header = document.getElementById('main-header');
       const links = document.querySelectorAll('.nav-link');
       const sections = document.querySelectorAll('[data-section]');
+      const languageSelect = document.getElementById('language-select');
+      let currentLanguage = 'es';
+      let activeExperienceId = null;
+
+      const translations = {
+        es: {
+          nav_aria: 'Principal',
+          nav_about: 'About',
+          nav_experience: 'Experiencia',
+          nav_education: 'Educación',
+          nav_work: 'Proyectos',
+          nav_contact: 'Contacto',
+          lang_aria: 'Selector de idioma',
+          about_banner_alt: 'Banner de la sección about',
+          about_title: 'Hola, soy Juan 👋',
+          about_text: 'Soy desarrollador frontend enfocado en crear experiencias digitales claras, rápidas y con impacto de negocio. Este portafolio resume experiencia profesional, formación y proyectos destacados.',
+          experience_title: 'Experiencia',
+          education_title: 'Educación',
+          work_title: 'Proyectos',
+          contact_title: 'Contacto',
+          see_more: 'Ver más',
+          full_case: 'Ver caso completo',
+          name: 'Nombre',
+          email: 'Email',
+          message: 'Mensaje',
+          send: 'Enviar',
+          close: 'Cerrar'
+        },
+        en: {
+          nav_aria: 'Main navigation',
+          nav_about: 'About',
+          nav_experience: 'Experience',
+          nav_education: 'Education',
+          nav_work: 'Work',
+          nav_contact: 'Contact',
+          lang_aria: 'Language selector',
+          about_banner_alt: 'About section banner',
+          about_title: 'Hi, I am Juan 👋',
+          about_text: 'I am a frontend developer focused on creating clear, fast digital experiences with business impact. This portfolio highlights my professional experience, education, and featured projects.',
+          experience_title: 'Experience',
+          education_title: 'Education',
+          work_title: 'Work',
+          contact_title: 'Contact',
+          see_more: 'See more',
+          full_case: 'View full case study',
+          name: 'Name',
+          email: 'Email',
+          message: 'Message',
+          send: 'Send',
+          close: 'Close'
+        }
+      };
+
+      const contentTranslations = {
+        es: {
+          experiences: {
+            'frontend-lead': {
+              role: 'Frontend Lead',
+              company: 'Nova Studio',
+              period: '2022 - Presente',
+              summary: 'Lideré la evolución del design system y la arquitectura frontend.',
+              details:
+                'Impulsé una migración progresiva a componentes reutilizables, mejorando la velocidad de entrega y la consistencia visual. Coordiné equipo de 5 devs y trabajé junto al área de producto para priorizar funcionalidades de alto impacto.'
+            },
+            'ux-engineer': {
+              role: 'UX Engineer',
+              company: 'Pixel Factory',
+              period: '2020 - 2022',
+              summary: 'Conecté diseño y desarrollo con prototipos accesibles y medibles.',
+              details:
+                'Construí librerías de patrones, ejecuté pruebas de usabilidad y optimicé flujos críticos. El resultado fue una reducción del 20% en abandono de formularios y mayor satisfacción del cliente final.'
+            },
+            'web-developer': {
+              role: 'Web Developer',
+              company: 'Freelance',
+              period: '2018 - 2020',
+              summary: 'Desarrollé sitios y landings para startups y pymes.',
+              details:
+                'Implementé soluciones en JAMstack, SEO técnico y analítica digital para proyectos de comercio y servicios. Varias implementaciones superaron 90 puntos en Lighthouse en performance y accesibilidad.'
+            }
+          },
+          education: [
+            {
+              title: 'Ingeniería en Sistemas',
+              institution: 'Universidad Tecnológica',
+              period: '2014 - 2018'
+            },
+            {
+              title: 'Diplomado en UX/UI',
+              institution: 'Academia Interactiva',
+              period: '2019'
+            }
+          ],
+          works: {
+            'dashboard-analytics': {
+              title: 'Dashboard de Analytics',
+              shortDescription: 'Panel de métricas para equipo comercial en tiempo real.'
+            },
+            'ecommerce-redesign': {
+              title: 'Rediseño E-commerce',
+              shortDescription: 'Mejora integral del flujo de compra para mobile.'
+            }
+          }
+        },
+        en: {
+          experiences: {
+            'frontend-lead': {
+              role: 'Frontend Lead',
+              company: 'Nova Studio',
+              period: '2022 - Present',
+              summary: 'Led the evolution of the design system and frontend architecture.',
+              details:
+                'Drove a progressive migration to reusable components, improving delivery speed and visual consistency. Coordinated a team of 5 developers and worked with product to prioritize high-impact features.'
+            },
+            'ux-engineer': {
+              role: 'UX Engineer',
+              company: 'Pixel Factory',
+              period: '2020 - 2022',
+              summary: 'Bridged design and engineering with accessible, measurable prototypes.',
+              details:
+                'Built pattern libraries, ran usability testing, and optimized critical user flows. The result was a 20% reduction in form abandonment and higher end-user satisfaction.'
+            },
+            'web-developer': {
+              role: 'Web Developer',
+              company: 'Freelance',
+              period: '2018 - 2020',
+              summary: 'Built websites and landing pages for startups and SMBs.',
+              details:
+                'Implemented JAMstack solutions, technical SEO, and digital analytics for commerce and service projects. Several implementations scored above 90 in Lighthouse performance and accessibility.'
+            }
+          },
+          education: [
+            {
+              title: 'Systems Engineering',
+              institution: 'Technological University',
+              period: '2014 - 2018'
+            },
+            {
+              title: 'UX/UI Diploma',
+              institution: 'Interactive Academy',
+              period: '2019'
+            }
+          ],
+          works: {
+            'dashboard-analytics': {
+              title: 'Analytics Dashboard',
+              shortDescription: 'Real-time metrics dashboard for the sales team.'
+            },
+            'ecommerce-redesign': {
+              title: 'E-commerce Redesign',
+              shortDescription: 'End-to-end improvement of the mobile purchase flow.'
+            }
+          }
+        }
+      };
+
+      function updateDynamicContent(lang) {
+        const localeContent = contentTranslations[lang] ?? contentTranslations.es;
+
+        document.querySelectorAll('[data-i18n-experience-role]').forEach((node) => {
+          const id = node.dataset.i18nExperienceRole;
+          const value = localeContent.experiences[id]?.role;
+          if (value) node.textContent = value;
+        });
+
+        document.querySelectorAll('[data-i18n-experience-company]').forEach((node) => {
+          const id = node.dataset.i18nExperienceCompany;
+          const value = localeContent.experiences[id]?.company;
+          if (value) node.textContent = value;
+        });
+
+        document.querySelectorAll('[data-i18n-experience-period]').forEach((node) => {
+          const id = node.dataset.i18nExperiencePeriod;
+          const value = localeContent.experiences[id]?.period;
+          if (value) node.textContent = value;
+        });
+
+        document.querySelectorAll('[data-i18n-experience-summary]').forEach((node) => {
+          const id = node.dataset.i18nExperienceSummary;
+          const value = localeContent.experiences[id]?.summary;
+          if (value) node.textContent = value;
+        });
+
+        document.querySelectorAll('[data-i18n-education-title]').forEach((node) => {
+          const index = Number(node.dataset.i18nEducationTitle);
+          const value = localeContent.education[index]?.title;
+          if (value) node.textContent = value;
+        });
+
+        document.querySelectorAll('[data-i18n-education-institution]').forEach((node) => {
+          const index = Number(node.dataset.i18nEducationInstitution);
+          const value = localeContent.education[index]?.institution;
+          if (value) node.textContent = value;
+        });
+
+        document.querySelectorAll('[data-i18n-education-period]').forEach((node) => {
+          const index = Number(node.dataset.i18nEducationPeriod);
+          const value = localeContent.education[index]?.period;
+          if (value) node.textContent = value;
+        });
+
+        document.querySelectorAll('[data-i18n-work-title]').forEach((node) => {
+          const slug = node.dataset.i18nWorkTitle;
+          const value = localeContent.works[slug]?.title;
+          if (value) node.textContent = value;
+        });
+
+        document.querySelectorAll('[data-i18n-work-description]').forEach((node) => {
+          const slug = node.dataset.i18nWorkDescription;
+          const value = localeContent.works[slug]?.shortDescription;
+          if (value) node.textContent = value;
+        });
+      }
+
+      function applyLanguage(lang) {
+        const selectedLanguage = translations[lang] ? lang : 'es';
+        const dictionary = translations[selectedLanguage];
+        currentLanguage = selectedLanguage;
+
+        document.documentElement.lang = selectedLanguage;
+
+        document.querySelectorAll('[data-i18n]').forEach((node) => {
+          const key = node.dataset.i18n;
+          if (dictionary[key]) node.textContent = dictionary[key];
+        });
+
+        document.querySelectorAll('[data-i18n-aria-label]').forEach((node) => {
+          const key = node.dataset.i18nAriaLabel;
+          if (dictionary[key]) node.setAttribute('aria-label', dictionary[key]);
+        });
+
+        document.querySelectorAll('[data-i18n-alt]').forEach((node) => {
+          const key = node.dataset.i18nAlt;
+          if (dictionary[key]) node.setAttribute('alt', dictionary[key]);
+        });
+
+        updateDynamicContent(selectedLanguage);
+        if (activeExperienceId) renderExperienceModal(activeExperienceId, selectedLanguage);
+
+        localStorage.setItem('language', selectedLanguage);
+        if (languageSelect) languageSelect.value = selectedLanguage;
+      }
 
       function updateHeaderHeight() {
         document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
@@ -331,6 +550,13 @@ import { education, experiences, works } from '../data/content';
 
       sections.forEach((section) => observer.observe(section));
       window.addEventListener('resize', updateHeaderHeight);
+
+      const savedLanguage = localStorage.getItem('language') || 'es';
+      applyLanguage(savedLanguage);
+      languageSelect?.addEventListener('change', (event) => {
+        applyLanguage(event.target.value);
+      });
+
       updateHeaderHeight();
       setActiveLink(location.hash.replace('#', '') || 'about');
 
@@ -340,19 +566,29 @@ import { education, experiences, works } from '../data/content';
       const body = document.getElementById('modal-body');
       const closeBtn = document.getElementById('close-modal');
 
+      function renderExperienceModal(id, lang) {
+        const localeContent = contentTranslations[lang] ?? contentTranslations.es;
+        const found = localeContent.experiences[id];
+        if (!found) return;
+
+        title.textContent = found.role;
+        meta.textContent = `${found.company} · ${found.period}`;
+        body.textContent = found.details;
+      }
+
       document.querySelectorAll('.experience-cta').forEach((btn) => {
         btn.addEventListener('click', () => {
-          const found = experiences.find((item) => item.id === btn.dataset.id);
-          if (!found) return;
-          title.textContent = found.role;
-          meta.textContent = `${found.company} · ${found.period}`;
-          body.textContent = found.details;
+          const id = btn.dataset.id;
+          if (!id) return;
+          activeExperienceId = id;
+          renderExperienceModal(id, currentLanguage);
           modal.classList.add('open');
           modal.setAttribute('aria-hidden', 'false');
         });
       });
 
       function closeModal() {
+        activeExperienceId = null;
         modal.classList.remove('open');
         modal.setAttribute('aria-hidden', 'true');
       }
@@ -365,29 +601,5 @@ import { education, experiences, works } from '../data/content';
         if (event.key === 'Escape') closeModal();
       });
     </script>
-    <script>
-  const root = document.documentElement;
-  const toggleBtn = document.getElementById("theme-toggle");
-
-  // 1. cargar preferencia guardada
-  const savedTheme = localStorage.getItem("theme");
-  if (savedTheme === "dark") {
-    root.classList.add("dark");
-  }
-
-  // 2. detectar sistema (si no hay preferencia)
-  if (!savedTheme) {
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    if (prefersDark) root.classList.add("dark");
-  }
-
-  // 3. toggle manual
-  toggleBtn.addEventListener("click", () => {
-    root.classList.toggle("dark");
-
-    const isDark = root.classList.contains("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
-  });
-</script>
   </body>
 </html>

@@ -1,0 +1,23 @@
+<svg width="1600" height="600" viewBox="0 0 1600 600" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Banner abstracto</title>
+  <desc id="desc">Ilustración abstracta con degradados en tonos azules y morados</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1600" y2="600" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0E3A7A"/>
+      <stop offset="0.5" stop-color="#3F2B96"/>
+      <stop offset="1" stop-color="#7A1EA1"/>
+    </linearGradient>
+    <radialGradient id="blob1" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(420 220) rotate(20) scale(380 260)">
+      <stop stop-color="#60A5FA" stop-opacity="0.9"/>
+      <stop offset="1" stop-color="#60A5FA" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blob2" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(1180 340) rotate(-18) scale(460 300)">
+      <stop stop-color="#A78BFA" stop-opacity="0.85"/>
+      <stop offset="1" stop-color="#A78BFA" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="600" rx="28" fill="url(#bg)"/>
+  <ellipse cx="420" cy="220" rx="380" ry="260" fill="url(#blob1)"/>
+  <ellipse cx="1180" cy="340" rx="460" ry="300" fill="url(#blob2)"/>
+  <path d="M120 470C260 360 410 340 560 420C720 506 840 512 980 430C1130 344 1290 330 1480 430" stroke="white" stroke-opacity="0.25" stroke-width="8" stroke-linecap="round"/>
+</svg>
