@@ -46,9 +46,24 @@ if (!project) {
         align-items: center;
         gap: .75rem;
       }
+      .nav-controls {
+        margin-left: auto;
+        display: flex;
+        gap: .6rem;
+        align-items: center;
+      }
       .back-link {
         color: var(--accent);
         text-decoration: none;
+      }
+      .lang-select,
+      .theme-switcher {
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        background: var(--surface);
+        color: var(--text);
+        padding: .4rem .8rem;
+        font: inherit;
       }
       main {
         max-width: 900px;
@@ -84,37 +99,138 @@ if (!project) {
   <body>
     <header>
       <nav>
-        <a class="back-link" href="/#work">← Volver al listado de work</a>
-        <button class="theme-switcher" id="theme-switcher" type="button" aria-label="Cambiar tema">
-          🌙 Dark
-        </button>
+        <a class="back-link" href="/#work" data-i18n="back_to_work">← Volver al listado de proyectos</a>
+        <div class="nav-controls">
+          <select id="language-select" class="lang-select" aria-label="Selector de idioma" data-i18n-aria-label="lang_aria">
+            <option value="es">ES</option>
+            <option value="en">EN</option>
+          </select>
+          <button class="theme-switcher" id="theme-switcher" type="button" aria-label="Cambiar tema">
+            🌙 Dark
+          </button>
+        </div>
       </nav>
     </header>
 
     <main>
       <article>
-        <h1>{project.title}</h1>
+        <h1 data-project-field="title">{project.title}</h1>
         <section>
-          <h2>Resumen</h2>
-          <p>{project.shortDescription}</p>
+          <h2 data-i18n="summary">Resumen</h2>
+          <p data-project-field="shortDescription">{project.shortDescription}</p>
         </section>
         <section>
-          <h2>Challenge</h2>
-          <p>{project.challenge}</p>
+          <h2 data-i18n="challenge">Reto</h2>
+          <p data-project-field="challenge">{project.challenge}</p>
         </section>
         <section>
-          <h2>Solution</h2>
-          <p>{project.solution}</p>
+          <h2 data-i18n="solution">Solución</h2>
+          <p data-project-field="solution">{project.solution}</p>
         </section>
         <section>
-          <h2>Impact</h2>
-          <p>{project.impact}</p>
+          <h2 data-i18n="impact">Impacto</h2>
+          <p data-project-field="impact">{project.impact}</p>
         </section>
       </article>
     </main>
 
-    <script>
+    <script define:vars={{ project }}>
       window.initializeThemeSwitcher('theme-switcher');
+
+      const languageSelect = document.getElementById('language-select');
+
+      const translations = {
+        es: {
+          lang_aria: 'Selector de idioma',
+          back_to_work: '← Volver al listado de proyectos',
+          summary: 'Resumen',
+          challenge: 'Reto',
+          solution: 'Solución',
+          impact: 'Impacto',
+          page_suffix: 'Proyecto'
+        },
+        en: {
+          lang_aria: 'Language selector',
+          back_to_work: '← Back to work list',
+          summary: 'Summary',
+          challenge: 'Challenge',
+          solution: 'Solution',
+          impact: 'Impact',
+          page_suffix: 'Project'
+        }
+      };
+
+      const projectTranslations = {
+        'dashboard-analytics': {
+          es: {
+            title: 'Dashboard de Analytics',
+            shortDescription: 'Panel de métricas para equipo comercial en tiempo real.',
+            challenge: 'Concentrar múltiples fuentes de datos en una interfaz simple para decisiones semanales.',
+            solution: 'Construí widgets modulares, filtros avanzados y vistas comparativas con foco en legibilidad.',
+            impact: 'Reducción del 35% en tiempo de análisis manual de reportes.'
+          },
+          en: {
+            title: 'Analytics Dashboard',
+            shortDescription: 'Real-time metrics dashboard for the sales team.',
+            challenge: 'Consolidate multiple data sources into a simple interface for weekly decision-making.',
+            solution: 'Built modular widgets, advanced filters, and comparative views focused on readability.',
+            impact: '35% reduction in manual report analysis time.'
+          }
+        },
+        'ecommerce-redesign': {
+          es: {
+            title: 'Rediseño E-commerce',
+            shortDescription: 'Mejora integral del flujo de compra para mobile.',
+            challenge: 'El checkout tenía alta fricción y baja conversión en dispositivos de gama media.',
+            solution: 'Simplifiqué pasos, optimicé carga de assets y definí un patrón de componentes escalables.',
+            impact: 'Incremento del 18% en conversión móvil en 3 meses.'
+          },
+          en: {
+            title: 'E-commerce Redesign',
+            shortDescription: 'End-to-end improvement of the mobile purchase flow.',
+            challenge: 'Checkout had high friction and low conversion on mid-range devices.',
+            solution: 'Simplified steps, optimized asset loading, and defined a scalable component pattern.',
+            impact: '18% increase in mobile conversion in 3 months.'
+          }
+        }
+      };
+
+      function applyLanguage(lang) {
+        const selectedLanguage = translations[lang] ? lang : 'es';
+        const dictionary = translations[selectedLanguage];
+        const projectDictionary = projectTranslations[project.slug]?.[selectedLanguage]
+          ?? projectTranslations[project.slug]?.es;
+
+        document.documentElement.lang = selectedLanguage;
+
+        document.querySelectorAll('[data-i18n]').forEach((node) => {
+          const key = node.dataset.i18n;
+          if (dictionary[key]) node.textContent = dictionary[key];
+        });
+
+        document.querySelectorAll('[data-i18n-aria-label]').forEach((node) => {
+          const key = node.dataset.i18nAriaLabel;
+          if (dictionary[key]) node.setAttribute('aria-label', dictionary[key]);
+        });
+
+        document.querySelectorAll('[data-project-field]').forEach((node) => {
+          const key = node.dataset.projectField;
+          const value = projectDictionary?.[key] ?? project[key];
+          if (value) node.textContent = value;
+        });
+
+        const dynamicTitle = projectDictionary?.title ?? project.title;
+        document.title = `${dynamicTitle} | ${dictionary.page_suffix}`;
+
+        localStorage.setItem('language', selectedLanguage);
+        if (languageSelect) languageSelect.value = selectedLanguage;
+      }
+
+      const savedLanguage = localStorage.getItem('language') || 'es';
+      applyLanguage(savedLanguage);
+      languageSelect?.addEventListener('change', (event) => {
+        applyLanguage(event.target.value);
+      });
     </script>
   </body>
 </html>

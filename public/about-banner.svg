@@ -1,0 +1,27 @@
+<svg width="2048" height="768" viewBox="0 0 2048 768" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+  <title id="title">Banner Experience Architecture and Product Strategy</title>
+  <desc id="desc">Banner negro con acento naranja y tipografía blanca, inspirado en diseño editorial moderno.</desc>
+
+  <rect width="2048" height="768" rx="28" fill="#06070A"/>
+  <rect x="1820" width="228" height="300" fill="#FF3D00"/>
+  <rect x="1820" y="300" width="228" height="468" fill="#E9E9EA"/>
+
+  <text x="1860" y="102" fill="white" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="700">Let's</text>
+  <text x="1860" y="176" fill="white" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="700">Do</text>
+  <text x="1860" y="250" fill="white" font-family="Inter, Arial, sans-serif" font-size="62" font-weight="700">Magic</text>
+
+  <text x="120" y="430" fill="#F5F5F6" font-family="Inter, Arial, sans-serif" font-size="120" font-weight="800" letter-spacing="-2">Experience Architecture</text>
+  <text x="120" y="560" fill="#F5F5F6" font-family="Inter, Arial, sans-serif" font-size="120" font-weight="800" letter-spacing="-2">&amp; Product Strategy</text>
+  <circle cx="1458" cy="568" r="12" fill="#FF3D00"/>
+
+  <g transform="translate(1848 352)" fill="#111318">
+    <path d="M70 0c-14 0-24 10-24 24v38h-38c-14 0-24 10-24 24 0 11 6 18 16 29l27 27c10 10 17 16 29 16h38v38c0 14 10 24 24 24s24-10 24-24v-38h38c14 0 24-10 24-24 0-11-6-18-16-29l-27-27c-10-10-17-16-29-16h-38V24c0-14-10-24-24-24Z" opacity="0.95"/>
+    <path d="M70 84h84v84H70z" fill="#E9E9EA"/>
+    <path d="M70 84V24" stroke="#111318" stroke-width="20" stroke-linecap="round"/>
+    <path d="M70 168v60" stroke="#111318" stroke-width="20" stroke-linecap="round"/>
+    <path d="M154 84h60" stroke="#111318" stroke-width="20" stroke-linecap="round"/>
+    <path d="M10 84h60" stroke="#111318" stroke-width="20" stroke-linecap="round"/>
+  </g>
+
+  <circle cx="1996" cy="710" r="11" fill="#FF3D00"/>
+</svg>
