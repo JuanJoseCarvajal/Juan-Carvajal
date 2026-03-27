@@ -1,0 +1,71 @@
+<!DOCTYPE html><html lang="es" data-astro-cid-j7pv25f6> <head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Portafolio Astro</title><link rel="stylesheet" href="/theme.css"><script src="/theme.js"></script><style>:root{--header-height: 80px}[data-astro-cid-j7pv25f6]{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,system-ui,sans-serif;background:var(--surface);color:var(--text)}header[data-astro-cid-j7pv25f6]{position:sticky;top:0;background:var(--surface);backdrop-filter:blur(8px);border-bottom:1px solid var(--border);z-index:100}nav[data-astro-cid-j7pv25f6]{max-width:1100px;margin:auto;display:flex;gap:1rem;align-items:center;padding:1rem;overflow-x:auto}nav[data-astro-cid-j7pv25f6] a[data-astro-cid-j7pv25f6]{color:var(--text);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:.4rem .8rem;white-space:nowrap;transition:all .2s ease}nav[data-astro-cid-j7pv25f6] a[data-astro-cid-j7pv25f6]:hover{border-color:var(--accent);color:var(--accent)}nav[data-astro-cid-j7pv25f6] a[data-astro-cid-j7pv25f6].is-active{background:var(--accent);color:#fff;border-color:var(--accent)}main[data-astro-cid-j7pv25f6]{max-width:1100px;margin:auto}section[data-astro-cid-j7pv25f6]{min-height:100vh;scroll-margin-top:calc(var(--header-height) + 6px);padding:3rem 1rem;border-bottom:1px solid var(--border);display:flex;flex-direction:column;justify-content:center}h1[data-astro-cid-j7pv25f6]{font-size:clamp(2rem,5vw,3rem);margin:0}h2[data-astro-cid-j7pv25f6]{font-size:1.8rem;margin-top:0}p[data-astro-cid-j7pv25f6]{color:var(--muted);line-height:1.7}.hero[data-astro-cid-j7pv25f6]{display:grid;gap:1rem}.carousel[data-astro-cid-j7pv25f6]{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(260px,340px);gap:1rem;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:.5rem}.card[data-astro-cid-j7pv25f6]{scroll-snap-align:start;background:var(--card);border:1px solid var(--border);border-radius:1rem;padding:1rem}.card[data-astro-cid-j7pv25f6] h3[data-astro-cid-j7pv25f6]{margin:0}.cta[data-astro-cid-j7pv25f6]{margin-top:1rem;display:inline-block;background:var(--accent);color:var(--text);padding:.5rem .8rem;border:0;border-radius:.5rem;font-weight:700;cursor:pointer;text-decoration:none}.simple-grid[data-astro-cid-j7pv25f6]{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:1rem}form[data-astro-cid-j7pv25f6]{display:grid;gap:.75rem;max-width:580px}input[data-astro-cid-j7pv25f6],textarea[data-astro-cid-j7pv25f6]{width:100%;border:1px solid var(--border);border-radius:.5rem;background:var(--surface);color:var(--text);padding:.7rem}.modal[data-astro-cid-j7pv25f6]{position:fixed;inset:0;background:var(--surface);display:none;align-items:center;justify-content:center;padding:1rem}.modal[data-astro-cid-j7pv25f6].open{display:flex}.modal-content[data-astro-cid-j7pv25f6]{width:min(680px,100%);background:var(--surface);border-radius:1rem;border:1px solid var(--border);padding:1.25rem}.modal-close[data-astro-cid-j7pv25f6]{float:right;border:1px solid var(--border);background:transparent;color:var(--text);border-radius:.4rem;padding:.2rem .5rem;cursor:pointer}.theme-toggle[data-astro-cid-j7pv25f6]{display:flex;align-items:center;justify-content:center;width:40px;height:40px;border-radius:999px;border:1px solid var(--border);background:var(--surface);color:var(--text);cursor:pointer;transition:all .3s ease}.theme-toggle[data-astro-cid-j7pv25f6]:hover{border-color:var(--accent);color:var(--accent)}.icon[data-astro-cid-j7pv25f6]{position:absolute;width:20px;height:20px;transition:all .3s ease}.sun[data-astro-cid-j7pv25f6]{opacity:1;transform:rotate(0) scale(1)}.moon[data-astro-cid-j7pv25f6]{opacity:0;transform:rotate(90deg) scale(.5)}.dark[data-astro-cid-j7pv25f6] .sun[data-astro-cid-j7pv25f6]{opacity:0;transform:rotate(-90deg) scale(.5)}.dark[data-astro-cid-j7pv25f6] .moon[data-astro-cid-j7pv25f6]{opacity:1;transform:rotate(0) scale(1)}.theme-toggle[data-astro-cid-j7pv25f6]{position:relative}
+</style><script type="module">const e=document.documentElement,a=document.getElementById("theme-toggle"),s=localStorage.getItem("theme");s==="dark"&&e.classList.add("dark");s||window.matchMedia("(prefers-color-scheme: dark)").matches&&e.classList.add("dark");a.addEventListener("click",()=>{e.classList.toggle("dark");const t=e.classList.contains("dark");localStorage.setItem("theme",t?"dark":"light")});
+</script></head> <body data-astro-cid-j7pv25f6> <header id="main-header" data-astro-cid-j7pv25f6> <nav aria-label="Principal" data-astro-cid-j7pv25f6> <a class="nav-link" href="#about" data-astro-cid-j7pv25f6>About</a> <a class="nav-link" href="#experience" data-astro-cid-j7pv25f6>Experience</a> <a class="nav-link" href="#education" data-astro-cid-j7pv25f6>Education</a> <a class="nav-link" href="#work" data-astro-cid-j7pv25f6>Work</a> <a class="nav-link" href="#contact" data-astro-cid-j7pv25f6>Contact</a> <button class="theme-switcher" id="theme-switcher" type="button" aria-label="Cambiar tema" data-astro-cid-j7pv25f6>
+🌙 Dark
+</button> </nav> </header> <main data-astro-cid-j7pv25f6> <section class="hero" id="about" data-section data-astro-cid-j7pv25f6> <h1 data-astro-cid-j7pv25f6>Hola, soy Juan 👋</h1> <p data-astro-cid-j7pv25f6>
+Soy desarrollador frontend enfocado en crear experiencias digitales claras, rápidas y con impacto de negocio.
+          Este portafolio resume experiencia profesional, formación y proyectos destacados.
+</p> </section> <section id="experience" data-section data-astro-cid-j7pv25f6> <h2 data-astro-cid-j7pv25f6>Experience</h2> <div class="carousel" aria-label="Carrusel de experiencia" data-astro-cid-j7pv25f6> <article class="card" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Frontend Lead</h3> <p data-astro-cid-j7pv25f6><strong data-astro-cid-j7pv25f6>Nova Studio</strong> · 2022 - Presente</p> <p data-astro-cid-j7pv25f6>Lideré la evolución del design system y la arquitectura frontend.</p> <button class="cta experience-cta" data-id="frontend-lead" data-astro-cid-j7pv25f6>Ver más</button> </article><article class="card" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>UX Engineer</h3> <p data-astro-cid-j7pv25f6><strong data-astro-cid-j7pv25f6>Pixel Factory</strong> · 2020 - 2022</p> <p data-astro-cid-j7pv25f6>Conecté diseño y desarrollo con prototipos accesibles y medibles.</p> <button class="cta experience-cta" data-id="ux-engineer" data-astro-cid-j7pv25f6>Ver más</button> </article><article class="card" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Web Developer</h3> <p data-astro-cid-j7pv25f6><strong data-astro-cid-j7pv25f6>Freelance</strong> · 2018 - 2020</p> <p data-astro-cid-j7pv25f6>Desarrollé sitios y landings para startups y pymes.</p> <button class="cta experience-cta" data-id="web-developer" data-astro-cid-j7pv25f6>Ver más</button> </article> </div> </section> <section id="education" data-section data-astro-cid-j7pv25f6> <h2 data-astro-cid-j7pv25f6>Education</h2> <div class="simple-grid" data-astro-cid-j7pv25f6> <article class="card" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Ingeniería en Sistemas</h3> <p data-astro-cid-j7pv25f6>Universidad Tecnológica</p> <p data-astro-cid-j7pv25f6>2014 - 2018</p> </article><article class="card" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Diplomado en UX/UI</h3> <p data-astro-cid-j7pv25f6>Academia Interactiva</p> <p data-astro-cid-j7pv25f6>2019</p> </article> </div> </section> <section id="work" data-section data-astro-cid-j7pv25f6> <h2 data-astro-cid-j7pv25f6>Work</h2> <div class="simple-grid" data-astro-cid-j7pv25f6> <article class="card" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Dashboard de Analytics</h3> <p data-astro-cid-j7pv25f6>Panel de métricas para equipo comercial en tiempo real.</p> <a class="cta" href="/work/dashboard-analytics" data-astro-cid-j7pv25f6>Ver caso completo</a> </article><article class="card" data-astro-cid-j7pv25f6> <h3 data-astro-cid-j7pv25f6>Rediseño E-commerce</h3> <p data-astro-cid-j7pv25f6>Mejora integral del flujo de compra para mobile.</p> <a class="cta" href="/work/ecommerce-redesign" data-astro-cid-j7pv25f6>Ver caso completo</a> </article> </div> </section> <section id="contact" data-section data-astro-cid-j7pv25f6> <h2 data-astro-cid-j7pv25f6>Contact</h2> <form data-astro-cid-j7pv25f6> <label data-astro-cid-j7pv25f6>Nombre<input name="name" required data-astro-cid-j7pv25f6></label> <label data-astro-cid-j7pv25f6>Email<input type="email" name="email" required data-astro-cid-j7pv25f6></label> <label data-astro-cid-j7pv25f6>Mensaje<textarea name="message" rows="5" required data-astro-cid-j7pv25f6></textarea></label> <button class="cta" type="submit" data-astro-cid-j7pv25f6>Enviar</button> </form> </section> </main> <div class="modal" id="experience-modal" aria-hidden="true" data-astro-cid-j7pv25f6> <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title" data-astro-cid-j7pv25f6> <button class="modal-close" id="close-modal" data-astro-cid-j7pv25f6>Cerrar</button> <h3 id="modal-title" data-astro-cid-j7pv25f6></h3> <p id="modal-meta" data-astro-cid-j7pv25f6></p> <p id="modal-body" data-astro-cid-j7pv25f6></p> </div> </div> <script>(function(){const experiences = [{"id":"frontend-lead","role":"Frontend Lead","company":"Nova Studio","period":"2022 - Presente","summary":"Lideré la evolución del design system y la arquitectura frontend.","details":"Impulsé una migración progresiva a componentes reutilizables, mejorando la velocidad de entrega y la consistencia visual. Coordiné equipo de 5 devs y trabajé junto al área de producto para priorizar funcionalidades de alto impacto."},{"id":"ux-engineer","role":"UX Engineer","company":"Pixel Factory","period":"2020 - 2022","summary":"Conecté diseño y desarrollo con prototipos accesibles y medibles.","details":"Construí librerías de patrones, ejecuté pruebas de usabilidad y optimicé flujos críticos. El resultado fue una reducción del 20% en abandono de formularios y mayor satisfacción del cliente final."},{"id":"web-developer","role":"Web Developer","company":"Freelance","period":"2018 - 2020","summary":"Desarrollé sitios y landings para startups y pymes.","details":"Implementé soluciones en JAMstack, SEO técnico y analítica digital para proyectos de comercio y servicios. Varias implementaciones superaron 90 puntos en Lighthouse en performance y accesibilidad."}];
+
+      window.initializeThemeSwitcher('theme-switcher');
+
+      const header = document.getElementById('main-header');
+      const links = document.querySelectorAll('.nav-link');
+      const sections = document.querySelectorAll('[data-section]');
+
+      function updateHeaderHeight() {
+        document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
+      }
+
+      function setActiveLink(id) {
+        links.forEach((link) => {
+          const active = link.getAttribute('href') === `#${id}`;
+          link.classList.toggle('is-active', active);
+          if (active) link.setAttribute('aria-current', 'page');
+          else link.removeAttribute('aria-current');
+        });
+      }
+
+      const observer = new IntersectionObserver((entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible) setActiveLink(visible.target.id);
+      }, { threshold: 0.55 });
+
+      sections.forEach((section) => observer.observe(section));
+      window.addEventListener('resize', updateHeaderHeight);
+      updateHeaderHeight();
+      setActiveLink(location.hash.replace('#', '') || 'about');
+
+      const modal = document.getElementById('experience-modal');
+      const title = document.getElementById('modal-title');
+      const meta = document.getElementById('modal-meta');
+      const body = document.getElementById('modal-body');
+      const closeBtn = document.getElementById('close-modal');
+
+      document.querySelectorAll('.experience-cta').forEach((btn) => {
+        btn.addEventListener('click', () => {
+          const found = experiences.find((item) => item.id === btn.dataset.id);
+          if (!found) return;
+          title.textContent = found.role;
+          meta.textContent = `${found.company} · ${found.period}`;
+          body.textContent = found.details;
+          modal.classList.add('open');
+          modal.setAttribute('aria-hidden', 'false');
+        });
+      });
+
+      function closeModal() {
+        modal.classList.remove('open');
+        modal.setAttribute('aria-hidden', 'true');
+      }
+
+      closeBtn.addEventListener('click', closeModal);
+      modal.addEventListener('click', (event) => {
+        if (event.target === modal) closeModal();
+      });
+      document.addEventListener('keydown', (event) => {
+        if (event.key === 'Escape') closeModal();
+      });
+    })();</script>  </body> </html>
