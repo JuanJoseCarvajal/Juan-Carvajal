@@ -239,11 +239,11 @@ import { education, experiences, works } from '../data/content';
       <section id="education" data-section>
         <h2 data-i18n="education_title">Education</h2>
         <div class="simple-grid">
-          {education.map((item) => (
+          {education.map((item, index) => (
             <article class="card">
-              <h3>{item.title}</h3>
-              <p>{item.institution}</p>
-              <p>{item.period}</p>
+              <h3 data-i18n-education-title={index}>{item.title}</h3>
+              <p data-i18n-education-institution={index}>{item.institution}</p>
+              <p data-i18n-education-period={index}>{item.period}</p>
             </article>
           ))}
         </div>
@@ -282,7 +282,7 @@ import { education, experiences, works } from '../data/content';
       </div>
     </div>
 
-    <script define:vars={{ experiences }}>
+    <script>
       window.initializeThemeSwitcher('theme-switcher');
 
       const header = document.getElementById('main-header');
@@ -402,19 +402,29 @@ import { education, experiences, works } from '../data/content';
       const body = document.getElementById('modal-body');
       const closeBtn = document.getElementById('close-modal');
 
+      function renderExperienceModal(id, lang) {
+        const localeContent = contentTranslations[lang] ?? contentTranslations.es;
+        const found = localeContent.experiences[id];
+        if (!found) return;
+
+        title.textContent = found.role;
+        meta.textContent = `${found.company} · ${found.period}`;
+        body.textContent = found.details;
+      }
+
       document.querySelectorAll('.experience-cta').forEach((btn) => {
         btn.addEventListener('click', () => {
-          const found = experiences.find((item) => item.id === btn.dataset.id);
-          if (!found) return;
-          title.textContent = found.role;
-          meta.textContent = `${found.company} · ${found.period}`;
-          body.textContent = found.details;
+          const id = btn.dataset.id;
+          if (!id) return;
+          activeExperienceId = id;
+          renderExperienceModal(id, currentLanguage);
           modal.classList.add('open');
           modal.setAttribute('aria-hidden', 'false');
         });
       });
 
       function closeModal() {
+        activeExperienceId = null;
         modal.classList.remove('open');
         modal.setAttribute('aria-hidden', 'true');
       }
