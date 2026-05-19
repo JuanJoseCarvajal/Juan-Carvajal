@@ -65,7 +65,6 @@ import { education, experiences, works } from '../data/content';
         align-items: center;
       }
 
-      .lang-select,
       .theme-switcher {
         border: 1px solid var(--border);
         border-radius: 999px;
@@ -186,17 +185,13 @@ import { education, experiences, works } from '../data/content';
   </head>
   <body>
     <header id="main-header">
-      <nav aria-label="Principal" data-i18n-aria-label="nav_aria">
-        <a class="nav-link" href="#about" data-i18n="nav_about">About</a>
-        <a class="nav-link" href="#experience" data-i18n="nav_experience">Experience</a>
-        <a class="nav-link" href="#education" data-i18n="nav_education">Education</a>
-        <a class="nav-link" href="#work" data-i18n="nav_work">Work</a>
-        <a class="nav-link" href="#contact" data-i18n="nav_contact">Contact</a>
+      <nav aria-label="Principal">
+        <a class="nav-link" href="#about">Acerca de</a>
+        <a class="nav-link" href="#experience">Experiencia</a>
+        <a class="nav-link" href="#education">Educación</a>
+        <a class="nav-link" href="#work">Proyectos</a>
+        <a class="nav-link" href="#contact">Contacto</a>
         <div class="nav-controls">
-          <select id="language-select" class="lang-select" aria-label="Selector de idioma" data-i18n-aria-label="lang_aria">
-            <option value="es">ES</option>
-            <option value="en">EN</option>
-          </select>
           <button class="theme-switcher" id="theme-switcher" type="button" aria-label="Cambiar tema">
             🌙 Dark
           </button>
@@ -206,234 +201,106 @@ import { education, experiences, works } from '../data/content';
 
     <main>
       <section class="hero" id="about" data-section>
-        <h1 data-i18n="about_title">Hola, soy Juan 👋</h1>
-        <p data-i18n="about_text">Durante más de 12 años, me ha movido una pregunta sencilla: ¿por qué algunas experiencias digitales se sienten naturales y fluidas, mientras otras generan fricción que no siempre sabemos explicar? Esa curiosidad fue lo que me llevó al diseño: no solo de interfaces, sino de la lógica invisible detrás de cómo las personas piensan, sienten y se mueven dentro de la tecnología. Con el tiempo, he evolucionado hacia el rol de Experience Architect, trabajando en la intersección entre comportamiento humano, diseño y estrategia de negocio. Para mí, cada producto es un sistema vivo donde deben alinearse las necesidades del usuario, los objetivos del negocio y la realidad técnica. Mi trabajo consiste en dar claridad a esa complejidad y transformar esa tensión en experiencias que se sientan naturales y generen impacto real. Mi enfoque está fuertemente influenciado por la psicología, el psicoanálisis y los factores humanos. Me interesa observar lo sutil: la pausa antes de un clic, la duda en un flujo, el momento en que el usuario se siente perdido o, por el contrario, totalmente en control. A partir de ahí, diseño experiencias que anticipan necesidades, reducen la carga cognitiva y generan una sensación de fluidez que, aunque no siempre se nota, siempre se siente. Con los años he entendido que el buen diseño no es solo usabilidad, es alineación. Alineación entre lo que el usuario necesita y lo que el negocio busca lograr. Ya sea optimizando un viaje de e-commerce, estructurando una plataforma compleja o construyendo sistemas de diseño escalables, abordo cada reto con una mentalidad estratégica, conectando cada decisión con resultados como crecimiento, retención y valor a largo plazo. También disfruto ser un puente entre mundos. Mi experiencia en investigación de usuarios, arquitectura de la información y desarrollo front-end me permite moverme con fluidez entre la estrategia y la ejecución, aterrizando ideas en soluciones concretas. Trabajo de cerca con equipos multidisciplinarios — producto, tecnología y stakeholders — para construir experiencias que no solo funcionen, sino que tengan sentido. En el fondo, creo que diseñar es una forma de cuidado. Es quitar lo innecesario, dar claridad donde hay confusión y crear productos que respeten el tiempo y la atención de las personas. Cuando el diseño está bien hecho, no llama la atención, simplemente fluye, se siente correcto y permite avanzar sin esfuerzo. Ese es el tipo de experiencia que me esfuerzo por crear cada día.</p>
+        <h1>Hola, soy Juan 👋</h1>
+        <p>Durante más de 12 años, me ha movido una pregunta sencilla: ¿por qué algunas experiencias digitales se sienten naturales y fluidas, mientras otras generan fricción que no siempre sabemos explicar? Esa curiosidad fue lo que me llevó al diseño—no solo de interfaces, sino de la lógica invisible detrás de cómo las personas piensan, sienten y se mueven dentro de la tecnología. Con el tiempo, he evolucionado hacia el rol de Experience Architect, trabajando en la intersección entre comportamiento humano, diseño y estrategia de negocio. Para mí, cada producto es un sistema vivo, donde deben alinearse las necesidades del usuario, los objetivos del negocio y las posibilidades tecnológicas. Mi trabajo consiste en dar claridad a esa complejidad y transformar esa tensión en experiencias que se sientan naturales y generen impacto real. Mi enfoque está profundamente influenciado por la psicología, el psicoanálisis y los factores humanos. Me interesa observar lo sutil: la pausa antes de un clic, la duda en un flujo, ese momento en que el usuario se siente perdido o, por el contrario, completamente en control. A partir de ahí, diseño experiencias que anticipan necesidades, reducen la carga cognitiva y generan una sensación de fluidez que, aunque muchas veces pasa desapercibida, siempre se percibe. Con los años he entendido que el buen diseño no es solo usabilidad, sino alineación. Alineación entre lo que el usuario necesita y lo que el negocio busca lograr. Ya sea optimizando un funnel de e-commerce, estructurando una plataforma compleja o construyendo sistemas de diseño escalables, abordo cada reto desde una mirada estratégica, conectando cada decisión con resultados como crecimiento, retención y valor a largo plazo. También disfruto ser un puente entre mundos. Mi experiencia en user research, arquitectura de información y desarrollo front-end me permite moverme con fluidez entre la estrategia y la ejecución, aterrizando ideas en soluciones concretas. Trabajo de cerca con equipos multidisciplinarios—producto, tecnología y stakeholders—para construir experiencias que no solo funcionen, sino que tengan sentido. En el fondo, creo que diseñar es una forma de cuidado. Es quitar lo innecesario, dar claridad donde hay confusión y crear productos que respeten el tiempo y la atención de las personas. Cuando el diseño está bien hecho, no se nota: simplemente fluye, se siente correcto y permite avanzar sin esfuerzo. Ese es el tipo de experiencia que busco crear todos los días.</p>
       </section>
 
       <section id="experience" data-section>
-        <h2 data-i18n="experience_title">Experience</h2>
-        <div class="carousel" aria-label="Carrusel de experiencia" data-i18n-aria-label="experience_carousel_aria">
+        <h2>Experiencia</h2>
+        <div class="carousel" aria-label="Carrusel de experiencia">
           {experiences.map((item) => (
             <article class="card">
               <h3>{item.role}</h3>
               <p><strong>{item.company}</strong> · {item.period}</p>
               <p>{item.summary}</p>
-              <button class="cta experience-cta" data-id={item.id}><span data-i18n="see_more">Ver más</span></button>
+              <button class="cta experience-cta" data-id={item.id}><span>Ver más</span></button>
             </article>
           ))}
         </div>
       </section>
 
       <section id="education" data-section>
-        <h2 data-i18n="education_title">Education</h2>
+        <h2>Educación</h2>
         <div class="simple-grid">
           {education.map((item, index) => (
             <article class="card">
-              <h3 data-i18n-education-title={index}>{item.title}</h3>
-              <p data-i18n-education-institution={index}>{item.institution}</p>
-              <p data-i18n-education-period={index}>{item.period}</p>
+              <h3>{item.title}</h3>
+              <p>{item.institution}</p>
+              <p>{item.period}</p>
             </article>
           ))}
         </div>
       </section>
 
       <section id="work" data-section>
-        <h2 data-i18n="work_title">Work</h2>
+        <h2>Proyectos</h2>
         <div class="simple-grid">
           {works.map((item) => (
             <article class="card">
               <h3>{item.title}</h3>
               <p>{item.shortDescription}</p>
-              <a class="cta" href={`/work/${item.slug}`} data-i18n="full_case">Ver caso completo</a>
+              <a class="cta" href={`/work/${item.slug}`}>Ver caso completo</a>
             </article>
           ))}
         </div>
       </section>
 
       <section id="contact" data-section>
-        <h2 data-i18n="contact_title">Contact</h2>
+        <h2>Contacto</h2>
         <form>
-          <label><span data-i18n="name">Nombre</span><input name="name" required /></label>
-          <label><span data-i18n="email">Email</span><input type="email" name="email" required /></label>
-          <label><span data-i18n="message">Mensaje</span><textarea name="message" rows="5" required></textarea></label>
-          <button class="cta" type="submit" data-i18n="send">Enviar</button>
+          <label><span>Nombre</span><input name="name" required /></label>
+          <label><span>Email</span><input type="email" name="email" required /></label>
+          <label><span>Mensaje</span><textarea name="message" rows="5" required></textarea></label>
+          <button class="cta" type="submit">Enviar</button>
         </form>
       </section>
     </main>
 
     <div class="modal" id="experience-modal" aria-hidden="true">
       <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
-        <button class="modal-close" id="close-modal" data-i18n="close">Cerrar</button>
+        <button class="modal-close" id="close-modal">Cerrar</button>
         <h3 id="modal-title"></h3>
         <p id="modal-meta"></p>
         <p id="modal-body"></p>
       </div>
     </div>
 
-    <script>
-      window.initializeThemeSwitcher('theme-switcher');
+    <script define:vars={{ experiences }}>
+      document.addEventListener('DOMContentLoaded', () => {
+        window.initializeThemeSwitcher('theme-switcher');
 
-      const header = document.getElementById('main-header');
-      const links = document.querySelectorAll('.nav-link');
-      const sections = document.querySelectorAll('[data-section]');
-      const languageSelect = document.getElementById('language-select');
-      let currentLanguage = 'es';
+        // Modal functionality
+        const modal = document.getElementById('experience-modal');
+        const closeBtn = document.getElementById('close-modal');
+        const modalTitle = document.getElementById('modal-title');
+        const modalMeta = document.getElementById('modal-meta');
+        const modalBody = document.getElementById('modal-body');
 
-      const contentTranslations = {
-        es: {
-          experiences: Object.fromEntries(experiences.map((item) => [item.id, item]))
-        },
-        en: {
-          experiences: Object.fromEntries(experiences.map((item) => [item.id, item]))
-        }
-      };
-
-      const translations = {
-        es: {
-          nav_aria: 'Principal',
-          nav_about: 'About',
-          nav_experience: 'Experiencia',
-          nav_education: 'Educación',
-          nav_work: 'Proyectos',
-          nav_contact: 'Contacto',
-          lang_aria: 'Selector de idioma',
-          about_banner_alt: 'Banner de la sección about',
-          about_title: 'Hola, soy Juan 👋',
-          about_text: 'Durante más de 12 años, me ha movido una pregunta sencilla: ¿por qué algunas experiencias digitales se sienten naturales y fluidas, mientras otras generan fricción que no siempre sabemos explicar? Esa curiosidad fue lo que me llevó al diseño—no solo de interfaces, sino de la lógica invisible detrás de cómo las personas piensan, sienten y se mueven dentro de la tecnología. Con el tiempo, he evolucionado hacia el rol de Experience Architect, trabajando en la intersección entre comportamiento humano, diseño y estrategia de negocio. Para mí, cada producto es un sistema vivo, donde deben alinearse las necesidades del usuario, los objetivos del negocio y las posibilidades tecnológicas. Mi trabajo consiste en dar claridad a esa complejidad y transformar esa tensión en experiencias que se sientan naturales y generen impacto real. Mi enfoque está profundamente influenciado por la psicología, el psicoanálisis y los factores humanos. Me interesa observar lo sutil: la pausa antes de un clic, la duda en un flujo, ese momento en que el usuario se siente perdido o, por el contrario, completamente en control. A partir de ahí, diseño experiencias que anticipan necesidades, reducen la carga cognitiva y generan una sensación de fluidez que, aunque muchas veces pasa desapercibida, siempre se percibe. Con los años he entendido que el buen diseño no es solo usabilidad, sino alineación. Alineación entre lo que el usuario necesita y lo que el negocio busca lograr. Ya sea optimizando un funnel de e-commerce, estructurando una plataforma compleja o construyendo sistemas de diseño escalables, abordo cada reto desde una mirada estratégica, conectando cada decisión con resultados como crecimiento, retención y valor a largo plazo. También disfruto ser un puente entre mundos. Mi experiencia en user research, arquitectura de información y desarrollo front-end me permite moverme con fluidez entre la estrategia y la ejecución, aterrizando ideas en soluciones concretas. Trabajo de cerca con equipos multidisciplinarios—producto, tecnología y stakeholders—para construir experiencias que no solo funcionen, sino que tengan sentido. En el fondo, creo que diseñar es una forma de cuidado. Es quitar lo innecesario, dar claridad donde hay confusión y crear productos que respeten el tiempo y la atención de las personas. Cuando el diseño está bien hecho, no se nota: simplemente fluye, se siente correcto y permite avanzar sin esfuerzo. Ese es el tipo de experiencia que busco crear todos los días.',
-          experience_title: 'Experiencia',
-          education_title: 'Educación',
-          work_title: 'Proyectos',
-          contact_title: 'Contacto',
-          see_more: 'Ver más',
-          full_case: 'Ver caso completo',
-          name: 'Nombre',
-          email: 'Email',
-          message: 'Mensaje',
-          send: 'Enviar',
-          close: 'Cerrar'
-        },
-        en: {
-          nav_aria: 'Main navigation',
-          nav_about: 'About',
-          nav_experience: 'Experience',
-          nav_education: 'Education',
-          nav_work: 'Work',
-          nav_contact: 'Contact',
-          lang_aria: 'Language selector',
-          about_banner_alt: 'About section banner',
-          about_title: 'Hi, I am Juan 👋',
-          about_text: 'For over 12 years, I’ve been drawn to a simple question: why do some digital experiences feel effortless, while others create friction we can’t always explain? That curiosity is what led me to design—not just interfaces, but the invisible logic behind how people think, feel, and move through technology. Throughout my journey, I’ve evolved into an Experience Architect, working at the intersection of human behavior, design, and business strategy. I see every product as a living system—one that must balance user needs, business goals, and technical realities. My role is to bring clarity to that complexity, shaping experiences that feel natural while delivering real impact. My work is deeply influenced by psychology, psychoanalysis, and human factors. I pay attention to the subtle patterns—the hesitation before a click, the confusion in a flow, the moments where users feel either in control or lost. By understanding these signals, I design experiences that anticipate needs, reduce cognitive load, and create a sense of flow that users may not consciously notice—but always feel. Over time, I’ve learned that great design is not just about usability—it’s about alignment. Alignment between what a user needs and what a business is trying to achieve. Whether I’m refining an e-commerce journey, structuring a complex platform, or building a scalable design system, I approach each challenge with a strategic mindset—connecting decisions to outcomes like growth, retention, and long-term product value. I’m also someone who enjoys bridging worlds. With experience in user research, information architecture, and front-end development, I move comfortably from abstract concepts to tangible solutions. I collaborate closely with teams—product managers, engineers, stakeholders—turning ideas into experiences that are not only functional, but meaningful. At the heart of it all, I believe design is a form of care. It’s about removing unnecessary effort, creating clarity where there is confusion, and building products that respect people’s time and attention. When done well, design doesn’t call attention to itself—it simply works, feels right, and allows people to move forward with ease.',
-          experience_title: 'Experience',
-          education_title: 'Education',
-          work_title: 'Work',
-          contact_title: 'Contact',
-          see_more: 'See more',
-          full_case: 'View full case study',
-          name: 'Name',
-          email: 'Email',
-          message: 'Message',
-          send: 'Send',
-          close: 'Close'
-        }
-      };
-
-      function applyLanguage(lang) {
-        const selectedLanguage = translations[lang] ? lang : 'es';
-        const dictionary = translations[selectedLanguage];
-
-        currentLanguage = selectedLanguage;
-        document.documentElement.lang = selectedLanguage;
-
-        document.querySelectorAll('[data-i18n]').forEach((node) => {
-          const key = node.dataset.i18n;
-          if (dictionary[key]) node.textContent = dictionary[key];
+        document.querySelectorAll('.experience-cta').forEach(btn => {
+          btn.addEventListener('click', () => {
+            const id = btn.dataset.id;
+            const experience = experiences.find(exp => exp.id === id);
+            if (experience) {
+              modalTitle.textContent = experience.role;
+              modalMeta.innerHTML = `<strong>${experience.company}</strong> · ${experience.period}`;
+              modalBody.textContent = experience.details;
+              modal.classList.add('open');
+              modal.setAttribute('aria-hidden', 'false');
+            }
+          });
         });
 
-        document.querySelectorAll('[data-i18n-aria-label]').forEach((node) => {
-          const key = node.dataset.i18nAriaLabel;
-          if (dictionary[key]) node.setAttribute('aria-label', dictionary[key]);
+        closeBtn.addEventListener('click', () => {
+          modal.classList.remove('open');
+          modal.setAttribute('aria-hidden', 'true');
         });
 
-        document.querySelectorAll('[data-i18n-alt]').forEach((node) => {
-          const key = node.dataset.i18nAlt;
-          if (dictionary[key]) node.setAttribute('alt', dictionary[key]);
+        modal.addEventListener('click', (e) => {
+          if (e.target === modal) {
+            modal.classList.remove('open');
+            modal.setAttribute('aria-hidden', 'true');
+          }
         });
-
-        localStorage.setItem('language', selectedLanguage);
-        if (languageSelect) languageSelect.value = selectedLanguage;
-      }
-
-      function updateHeaderHeight() {
-        document.documentElement.style.setProperty('--header-height', `${header.offsetHeight}px`);
-      }
-
-      function setActiveLink(id) {
-        links.forEach((link) => {
-          const active = link.getAttribute('href') === `#${id}`;
-          link.classList.toggle('is-active', active);
-          if (active) link.setAttribute('aria-current', 'page');
-          else link.removeAttribute('aria-current');
-        });
-      }
-
-      const observer = new IntersectionObserver((entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
-        if (visible) setActiveLink(visible.target.id);
-      }, { threshold: 0.55 });
-
-      sections.forEach((section) => observer.observe(section));
-      window.addEventListener('resize', updateHeaderHeight);
-
-      const savedLanguage = localStorage.getItem('language') || 'es';
-      applyLanguage(savedLanguage);
-      languageSelect?.addEventListener('change', (event) => {
-        applyLanguage(event.target.value);
-      });
-
-      updateHeaderHeight();
-      setActiveLink(location.hash.replace('#', '') || 'about');
-
-      const modal = document.getElementById('experience-modal');
-      const title = document.getElementById('modal-title');
-      const meta = document.getElementById('modal-meta');
-      const body = document.getElementById('modal-body');
-      const closeBtn = document.getElementById('close-modal');
-
-      function renderExperienceModal(id, lang) {
-        const localeContent = contentTranslations[lang] ?? contentTranslations.es;
-        const found = localeContent.experiences[id];
-        if (!found) return;
-
-        title.textContent = found.role;
-        meta.textContent = `${found.company} · ${found.period}`;
-        body.textContent = found.details;
-      }
-
-      document.querySelectorAll('.experience-cta').forEach((btn) => {
-        btn.addEventListener('click', () => {
-          const id = btn.dataset.id;
-          if (!id) return;
-          activeExperienceId = id;
-          renderExperienceModal(id, currentLanguage);
-          modal.classList.add('open');
-          modal.setAttribute('aria-hidden', 'false');
-        });
-      });
-
-      function closeModal() {
-        activeExperienceId = null;
-        modal.classList.remove('open');
-        modal.setAttribute('aria-hidden', 'true');
-      }
-
-      closeBtn.addEventListener('click', closeModal);
-      modal.addEventListener('click', (event) => {
-        if (event.target === modal) closeModal();
-      });
-      document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape') closeModal();
       });
     </script>
   </body>
