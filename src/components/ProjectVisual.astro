@@ -1,10 +1,13 @@
 ---
-const {index, lang='es'} = Astro.props;
+const {index, lang='es', image, alt, eager=false} = Astro.props;
 const es = lang === 'es';
 ---
-<div class:list={['project-visual', index === 0 ? 'analytics' : 'commerce']} aria-hidden="true">
+<div class:list={['project-visual', image ? 'with-image' : (index === 0 ? 'analytics' : 'commerce')]}>
+  {image && <img src={`/projects/${image}`} alt={alt || ''} loading={eager ? 'eager' : 'lazy'} decoding="async" />}
+  {!image && <>
   <div class="visual-top"><span>{index === 0 ? 'ANALYTICS / UX' : 'COMMERCE / UX'}</span><span>0{index+1}</span></div>
   <div class="visual-statement">{index === 0 ? (es ? 'Datos claros.\nMejores decisiones.' : 'Clear data.\nBetter decisions.') : (es ? 'Menos pasos.\nMás posibilidades.' : 'Fewer steps.\nMore possibilities.')}</div>
   <div class="journey">{(index === 0 ? (es ? ['Fuentes','Filtros','Decisiones'] : ['Sources','Filters','Decisions']) : (es ? ['Explorar','Elegir','Comprar'] : ['Explore','Choose','Buy'])).map((text,i) => <><span class="journey-node"><small>0{i+1}</small>{text}</span>{i<2 && <span class="journey-line"></span>}</>)}</div>
   <div class="visual-bottom"><span>{es ? 'ARQUITECTURA DE EXPERIENCIA' : 'EXPERIENCE ARCHITECTURE'}</span><span>JC*</span></div>
+  </>}
 </div>

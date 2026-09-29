@@ -3,9 +3,10 @@ import Layout from '../layouts/Layout.astro';
 import ProjectVisual from './ProjectVisual.astro';
 import { copy, projectsEn, experienceEn, type Locale } from '../data/i18n';
 import { works, experiences, education } from '../data/content';
+import { localizedProjects } from '../data/projects';
 const {lang='es'} = Astro.props as {lang:Locale};
 const t=copy[lang]; const es=lang==='es'; const base=es ? '' : '/en';
-const projects=works.map((p,i)=>({...p,...(!es ? projectsEn[i] : {})}));
+const projects=localizedProjects(lang);
 ---
 <Layout lang={lang} alternate={es ? '/en/' : '/'}>
   <section class="hero wrap" aria-labelledby="hero-title">
@@ -16,7 +17,7 @@ const projects=works.map((p,i)=>({...p,...(!es ? projectsEn[i] : {})}));
   </section>
   <section id="work" class="section wrap" aria-labelledby="work-title">
     <div class="section-heading"><span class="eyebrow">{t.workLabel}</span><div><h2 id="work-title">{t.workTitle}</h2><p>{t.workIntro}</p></div></div>
-    <div class="project-grid">{projects.map((p,i)=><a class="project-card" href={`${base}/work/${p.slug}/`}><ProjectVisual index={i} lang={lang}/><div class="project-meta"><span>{i===0 ? (es?'Diseño de producto':'Product design') : (es?'Optimización de experiencia':'Experience optimization')}</span><span>0{i+1}</span></div><h3>{p.title}</h3><p>{p.shortDescription}</p><div class="project-result"><strong>{i===0 ? '−35%' : '+18%'}</strong><span>{i===0 ? (es?'tiempo de análisis manual':'manual analysis time') : (es?'conversión móvil':'mobile conversion')}</span></div><span class="case-link">{t.caseCta}<span aria-hidden="true">+</span></span></a>)}</div>
+    <div class="project-grid">{projects.map((p,i)=><a class="project-card" href={`${base}/work/${p.slug}/`}><ProjectVisual index={i} lang={lang} image={p.cover} alt={p.title} /><div class="project-meta"><span>{p.category}</span><span>0{i+1}</span></div><h3>{p.title}</h3><p>{p.shortDescription}</p><div class="project-result"><strong>{p.outcome.split(' ')[0]}</strong><span>{p.outcome.split(' ').slice(1).join(' ')}</span></div><span class="case-link">{t.caseCta}<span aria-hidden="true">+</span></span></a>)}</div>
   </section>
   <section id="services" class="services-section section" aria-labelledby="services-title"><div class="wrap">
     <div class="section-heading"><span class="eyebrow">{t.serviceLabel}</span><div><h2 id="services-title">{t.serviceTitle}</h2><p>{t.serviceIntro}</p></div></div>

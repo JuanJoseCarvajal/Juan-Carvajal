@@ -24,7 +24,7 @@ const home = lang === 'es' ? '/' : '/en/';
   <body>
     <a class="skip-link" href="#main">{t.skip}</a>
     <header class="site-header">
-      <a class="brand" href={home} aria-label={lang === 'es' ? 'Juan Carvajal — Inicio' : 'Juan Carvajal — Home'}>juan carvajal<span class="brand-dot">*</span></a>
+      <a class="brand" href={home} aria-label={lang === 'es' ? 'Juan Carvajal — Inicio' : 'Juan Carvajal — Home'}><img src="/brand/juan-carvajal-logo.png" alt="Juan Carvajal" /></a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="navigation" aria-label={t.menu}>{lang === 'es' ? 'Menú' : 'Menu'} <span>+</span></button>
       <nav id="navigation" aria-label={lang === 'es' ? 'Navegación principal' : 'Main navigation'}>
         {['work','services','about'].map((id,i) => <a href={`${home}#${id}`}>{t.nav[i]}</a>)}
@@ -36,7 +36,7 @@ const home = lang === 'es' ? '/' : '/en/';
       </div>
     </header>
     <main id="main"><slot /></main>
-    <footer class="site-footer"><a class="brand" href={home}>juan carvajal<span class="brand-dot">*</span></a><p>{t.footer}</p><span>© {new Date().getFullYear()}</span></footer>
+    <footer class="site-footer"><a class="brand" href={home}><img src="/brand/juan-carvajal-logo.png" alt="Juan Carvajal" /></a><p>{t.footer}</p><span>© {new Date().getFullYear()}</span></footer>
     <script>
       const menu = document.querySelector<HTMLButtonElement>('.menu-toggle');
       const nav = document.querySelector('#navigation');
