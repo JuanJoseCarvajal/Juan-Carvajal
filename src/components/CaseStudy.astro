@@ -1,0 +1,12 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectVisual from './ProjectVisual.astro';
+import {copy,projectsEn,type Locale} from '../data/i18n';
+import {works} from '../data/content';
+const {index,lang='es'}=Astro.props as {index:number;lang:Locale};
+const es=lang==='es';const t=copy[lang];const base=es?'':'/en';
+const project={...works[index],...(!es?projectsEn[index]:{})};const other=(index+1)%works.length;
+---
+<Layout lang={lang} title={`${project.title} — Juan Carvajal`} description={project.shortDescription} alternate={`${es?'/en':''}/work/${project.slug}/`}>
+  <article class="case-page wrap"><a class="text-link case-back" href={`${base}/#work`}>{t.back}</a><div class="case-heading"><span class="eyebrow">{es?'CASO DE ESTUDIO':'CASE STUDY'} / 0{index+1}</span><h1>{project.title}</h1><p>{project.shortDescription}</p><div class="case-tags"><span>{index===0?'Product design':'UX / E-commerce'}</span><span>Juan Carvajal</span></div></div><ProjectVisual index={index} lang={lang}/><div class="case-body"><aside><span class="eyebrow">{t.overview}</span><nav aria-label={es?'Contenido del caso':'Case contents'}><a href="#challenge">01 / {t.challenge}</a><a href="#solution">02 / {t.solution}</a><a href="#impact">03 / {t.impact}</a></nav></aside><div><section id="challenge"><span class="eyebrow">01</span><h2>{t.challenge}</h2><p>{project.challenge}</p></section><section id="solution"><span class="eyebrow">02</span><h2>{t.solution}</h2><p>{project.solution}</p><div class="solution-list">{(index===0 ? (es?['Widgets modulares','Filtros avanzados','Vistas comparativas']:['Modular widgets','Advanced filters','Comparison views']) : (es?['Menos pasos','Carga optimizada','Componentes escalables']:['Fewer steps','Optimized loading','Scalable components'])).map(x=><span>{x}</span>)}</div></section><section id="impact" class="impact-panel"><span class="eyebrow">03 / {t.impact}</span><strong>{index===0?'−35%':'+18%'}</strong><p>{project.impact}</p><small>{t.resultNote}</small></section></div></div><div class="case-contact"><h2>{t.related}</h2><a class="button primary" href={`${base}/#contact`}>{t.relatedCta}</a></div><a class="next-project" href={`${base}/work/${works[other].slug}/`}><span class="eyebrow">{t.next}</span><strong>{es?works[other].title:projectsEn[other].title}</strong><span aria-hidden="true">+</span></a></article>
+</Layout>

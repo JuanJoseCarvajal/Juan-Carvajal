@@ -1,0 +1,51 @@
+---
+import Layout from '../layouts/Layout.astro';
+import ProjectVisual from './ProjectVisual.astro';
+import { copy, projectsEn, experienceEn, type Locale } from '../data/i18n';
+import { works, experiences, education } from '../data/content';
+const {lang='es'} = Astro.props as {lang:Locale};
+const t=copy[lang]; const es=lang==='es'; const base=es ? '' : '/en';
+const projects=works.map((p,i)=>({...p,...(!es ? projectsEn[i] : {})}));
+---
+<Layout lang={lang} alternate={es ? '/en/' : '/'}>
+  <section class="hero wrap" aria-labelledby="hero-title">
+    <div class="hero-eyebrow"><span class="eyebrow">{t.eyebrow}</span><span class="edition">PORTFOLIO / {new Date().getFullYear()}</span></div>
+    <h1 id="hero-title">{t.hero1}<br/><span>{t.hero2}</span><span class="hero-asterisk" aria-hidden="true">✳</span></h1>
+    <div class="hero-bottom"><div><p class="hero-intro">{t.intro}</p><div class="hero-actions"><a class="button primary" href="#contact">{t.heroCta}</a><a class="text-link" href="#work">{t.workCta}</a></div></div><div class="hero-proof"><strong>12<span>+</span></strong><p>{t.years}</p></div></div>
+    <div class="hero-rule"><span>{t.heroNote}</span><span aria-hidden="true">{es ? 'DESLIZA PARA EXPLORAR ↓' : 'SCROLL TO EXPLORE ↓'}</span></div>
+  </section>
+  <section id="work" class="section wrap" aria-labelledby="work-title">
+    <div class="section-heading"><span class="eyebrow">{t.workLabel}</span><div><h2 id="work-title">{t.workTitle}</h2><p>{t.workIntro}</p></div></div>
+    <div class="project-grid">{projects.map((p,i)=><a class="project-card" href={`${base}/work/${p.slug}/`}><ProjectVisual index={i} lang={lang}/><div class="project-meta"><span>{i===0 ? (es?'Diseño de producto':'Product design') : (es?'Optimización de experiencia':'Experience optimization')}</span><span>0{i+1}</span></div><h3>{p.title}</h3><p>{p.shortDescription}</p><div class="project-result"><strong>{i===0 ? '−35%' : '+18%'}</strong><span>{i===0 ? (es?'tiempo de análisis manual':'manual analysis time') : (es?'conversión móvil':'mobile conversion')}</span></div><span class="case-link">{t.caseCta}<span aria-hidden="true">+</span></span></a>)}</div>
+  </section>
+  <section id="services" class="services-section section" aria-labelledby="services-title"><div class="wrap">
+    <div class="section-heading"><span class="eyebrow">{t.serviceLabel}</span><div><h2 id="services-title">{t.serviceTitle}</h2><p>{t.serviceIntro}</p></div></div>
+    <div class="services-grid">{t.services.map((s,i)=><article class="service-card"><span class="service-index">0{i+1}<span aria-hidden="true">{['⌘','◎','⊞'][i]}</span></span><h3>{s.name}</h3><p>{s.text}</p><ul>{s.items.map(item=><li>{item}</li>)}</ul><a href="#contact" data-service={i} class="service-link">{s.cta}<span aria-hidden="true">+</span></a></article>)}</div>
+  </div></section>
+  <section class="section wrap" aria-labelledby="process-title"><div class="section-heading"><span class="eyebrow">{t.processLabel}</span><h2 id="process-title">{t.processTitle}</h2></div><div class="process-grid">{t.steps.map(([title,text],i)=><article><span class="step-number">0{i+1}</span><h3>{title}</h3><p>{text}</p></article>)}</div></section>
+  <section id="about" class="about-section section wrap" aria-labelledby="about-title"><div class="about-grid"><div><span class="eyebrow">{t.aboutLabel}</span><h2 id="about-title">{t.aboutTitle}</h2><span class="about-signature" aria-hidden="true">jc.</span></div><div class="about-copy"><p class="lead">{t.aboutText}</p><p>{t.aboutText2}</p><p>{t.aboutText3}</p><div class="expertise-tags"><span>User research</span><span>{es ? 'Arquitectura de información' : 'Information architecture'}</span><span>Frontend</span></div></div></div>
+    <div class="credentials"><div><h3>{t.experience}</h3>{experiences.map((item,i)=>{const exp={...item,...(!es?experienceEn[i]:{})};return <details class="experience"><summary><span><strong>{exp.role}</strong><span>{exp.company}</span></span><span class="experience-period">{exp.period}<span class="expand" aria-hidden="true">+</span></span></summary><div><p class="lead-small">{exp.summary}</p><p>{exp.details}</p></div></details>})}</div><div><h3>{t.education}</h3>{education.map((item,i)=><article class="education"><span>{item.period}</span><h4>{es?item.title:['Systems Engineering','UX/UI Diploma'][i]}</h4><p>{item.institution}</p></article>)}</div></div>
+  </section>
+  <section id="contact" class="contact-section section" aria-labelledby="contact-title"><div class="wrap contact-grid"><div><span class="eyebrow">{t.contactLabel}</span><h2 id="contact-title">{t.contactTitle}</h2><p>{t.contactIntro}</p><a class="contact-email" href="mailto:hello@juancarvajal.site">hello@juancarvajal.site</a><span class="contact-mark" aria-hidden="true">✳</span></div><div><form id="contact-form"><div class="form-row"><label for="name">{t.name}<input id="name" name="name" autocomplete="name" maxlength="100" required/></label><label for="email">{t.email}<input id="email" name="email" type="email" autocomplete="email" maxlength="200" required/></label></div><label for="service">{t.service}<select id="service" name="service" required><option value="">{t.optional}</option>{t.services.map((s,i)=><option value={i}>{s.name}</option>)}</select></label><label for="message">{t.message}<textarea id="message" name="message" rows="4" minlength="10" maxlength="5000" required/></label><button class="button contact-submit" type="submit">{t.submit}<span aria-hidden="true">+</span></button><p class="form-note">{t.formNote}</p></form><div id="brief-result" class="brief-result" hidden tabindex="-1"><h3>{t.briefTitle}</h3><p>{t.briefHelp}</p><pre id="brief-preview"></pre><div class="brief-actions"><button type="button" class="button" id="copy-brief">{t.copy}</button><button type="button" class="text-link" id="download-brief">{t.download}</button></div><p id="copy-status" role="status"></p></div></div></div></section>
+</Layout>
+<script define:vars={{t}}>
+  document.querySelectorAll('[data-service]').forEach(link=>link.addEventListener('click',()=>{document.getElementById('service').value=link.dataset.service;}));
+  const form=document.getElementById('contact-form');
+  let brief='';
+  form.addEventListener('submit',event=>{
+    event.preventDefault();
+    if(!form.reportValidity())return;
+    const data=new FormData(form);
+    brief=`${t.name}: ${data.get('name')}\n${t.email}: ${data.get('email')}\n${t.service}: ${t.services[Number(data.get('service'))].name}\n\n${data.get('message')}`;
+    document.getElementById('brief-preview').textContent=brief;
+    const result=document.getElementById('brief-result');result.hidden=false;result.focus();
+    window.location.href=`mailto:hello@juancarvajal.site?subject=${encodeURIComponent(t.services[Number(data.get('service'))].name+' — '+data.get('name'))}&body=${encodeURIComponent(brief)}`;
+  });
+  document.getElementById('copy-brief').addEventListener('click',async()=>{
+    try{await navigator.clipboard.writeText(brief);document.getElementById('copy-status').textContent=t.copied;}
+    catch{document.getElementById('copy-status').textContent=t.download;}
+  });
+  document.getElementById('download-brief').addEventListener('click',()=>{
+    const url=URL.createObjectURL(new Blob([brief],{type:'text/plain;charset=utf-8'}));const a=document.createElement('a');a.href=url;a.download='project-brief.txt';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
+  });
+</script>
