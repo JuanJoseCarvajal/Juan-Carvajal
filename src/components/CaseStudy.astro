@@ -3,6 +3,8 @@ import Layout from '../layouts/Layout.astro';
 import ProjectVisual from './ProjectVisual.astro';
 import {copy, type Locale} from '../data/i18n';
 import {localizedProjects} from '../data/projects';
+import {Image} from 'astro:assets';
+const assets = import.meta.glob<{default: ImageMetadata}>('../assets/projects/*', {eager:true});
 const {index,lang='es'}=Astro.props as {index:number;lang:Locale};
 const es=lang==='es'; const t=copy[lang]; const base=es?'':'/en';
 const projects=localizedProjects(lang); const project=projects[index]; const other=(index+1)%projects.length;
@@ -12,14 +14,14 @@ const projects=localizedProjects(lang); const project=projects[index]; const oth
     <a class="text-link case-back" href={`${base}/#work`}>{t.back}</a>
     <div class="case-heading"><span class="eyebrow">{project.client} / {project.category}</span><h1>{project.title}</h1><p>{project.shortDescription}</p><div class="case-tags"><span>{project.role}</span><span>Juan Carvajal</span></div></div>
     <ProjectVisual index={index} lang={lang} image={project.cover} alt={project.title} eager={true}/>
-    <div class="case-context"><div><span class="eyebrow">{es?'EL PUNTO DE PARTIDA':'THE STARTING POINT'}</span><h2>{project.context}</h2></div><div><p>{project.summary}</p></div></div>
+    <div class="case-context"><div><span class="eyebrow">{es?'EL PUNTO DE PARTIDA':'THE STARTING POINT'}</span><h2>{project.client}</h2></div><div><p>{project.context}</p></div></div>
     <div class="case-body"><aside><span class="eyebrow">{t.overview}</span><nav aria-label={es?'Contenido del caso':'Case contents'}><a href="#challenge">01 / {t.challenge}</a><a href="#solution">02 / {t.solution}</a><a href="#decisions">03 / {es?'Decisiones':'Decisions'}</a><a href="#impact">04 / {t.impact}</a></nav></aside><div>
       <section id="challenge"><span class="eyebrow">01</span><h2>{t.challenge}</h2><p>{project.challenge}</p></section>
       <section id="solution"><span class="eyebrow">02</span><h2>{t.solution}</h2><p>{project.solution}</p></section>
-      <section id="decisions" class="design-decisions"><span class="eyebrow">03</span><h2>{es?'Decisiones que hacen la diferencia':'Decisions that make the difference'}</h2>{project.decisions.map(([title,text],i)=><article><span class="decision-number">0{i+1}</span><div><h3>{title}</h3><p>{text}</p></div></article>)}</section>
-      <section id="impact" class="impact-panel"><span class="eyebrow">04 / {t.impact}</span><strong>{project.outcome.split(' ')[0]}</strong><p>{project.impact}</p><blockquote>{project.outcome}</blockquote></section>
+      <section id="decisions" class="design-decisions"><span class="eyebrow">03</span><h2>{es?'Decisiones que hacen la diferencia':'Decisions that make the difference'}</h2>{project.decisions.map((text,i)=><article><span class="decision-number">0{i+1}</span><p>{text}</p></article>)}</section>
+      <section id="impact" class="impact-panel"><span class="eyebrow">04 / {t.impact}</span><h2>{project.outcome}</h2><p>{project.impact}</p></section>
     </div></div>
-    <div class="case-gallery"><div class="eyebrow">{es?'MATERIAL DEL CASO':'CASE MATERIAL'}</div><div class="gallery-grid">{project.images.map(([src,esAlt,enAlt])=><figure><img src={`/projects/${src}`} alt={lang==='es'?esAlt:enAlt} loading="lazy"/><figcaption>{lang==='es'?esAlt:enAlt}</figcaption></figure>)}</div></div>
+    <div class="case-gallery"><div class="eyebrow">{es?'MATERIAL DEL CASO · ABRE LAS IMÁGENES PARA VER EL DETALLE':'CASE MATERIAL · OPEN IMAGES TO VIEW DETAILS'}</div><div class="gallery-grid">{project.images.map(([src,esAlt,enAlt])=><figure><a href={assets[`../assets/projects/${src}`].default.src} target="_blank" rel="noopener" aria-label={`${es?'Ampliar':'Enlarge'}: ${es?esAlt:enAlt}`}><Image src={assets[`../assets/projects/${src}`].default} alt={es?esAlt:enAlt} widths={[480,960]} sizes="(max-width:760px) 100vw, 50vw" format="webp" loading="lazy"/></a><figcaption>{es?esAlt:enAlt}</figcaption></figure>)}</div></div>
     <div class="case-contact"><h2>{t.related}</h2><a class="button primary" href={`${base}/#contact`}>{t.relatedCta}</a></div><a class="next-project" href={`${base}/work/${projects[other].slug}/`}><span class="eyebrow">{t.next}</span><strong>{projects[other].title}</strong><span aria-hidden="true">+</span></a>
   </article>
 </Layout>

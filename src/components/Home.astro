@@ -17,7 +17,7 @@ const projects=localizedProjects(lang);
   </section>
   <section id="work" class="section wrap" aria-labelledby="work-title">
     <div class="section-heading"><span class="eyebrow">{t.workLabel}</span><div><h2 id="work-title">{t.workTitle}</h2><p>{t.workIntro}</p></div></div>
-    <div class="project-grid">{projects.map((p,i)=><a class="project-card" href={`${base}/work/${p.slug}/`}><ProjectVisual index={i} lang={lang} image={p.cover} alt={p.title} /><div class="project-meta"><span>{p.category}</span><span>0{i+1}</span></div><h3>{p.title}</h3><p>{p.shortDescription}</p><div class="project-result"><strong>{p.outcome.split(' ')[0]}</strong><span>{p.outcome.split(' ').slice(1).join(' ')}</span></div><span class="case-link">{t.caseCta}<span aria-hidden="true">+</span></span></a>)}</div>
+    <div class="project-grid">{projects.map((p,i)=><a class="project-card" href={`${base}/work/${p.slug}/`}><ProjectVisual index={i} lang={lang} image={p.cover} alt={p.title} /><div class="project-meta"><span>{p.client} · {p.category}</span><span>0{i+1}</span></div><h3>{p.title}</h3><p>{p.shortDescription}</p><div class="project-result"><span>{p.outcome}</span></div><span class="case-link">{t.caseCta}<span aria-hidden="true">+</span></span></a>)}</div>
   </section>
   <section id="services" class="services-section section" aria-labelledby="services-title"><div class="wrap">
     <div class="section-heading"><span class="eyebrow">{t.serviceLabel}</span><div><h2 id="services-title">{t.serviceTitle}</h2><p>{t.serviceIntro}</p></div></div>

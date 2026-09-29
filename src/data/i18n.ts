@@ -8,7 +8,7 @@ export const copy = {
     intro: 'Diseño experiencias que conectan lo que las personas necesitan con lo que tu negocio quiere lograr.',
     heroCta: 'Conversemos sobre tu proyecto', workCta: 'Explora mi trabajo',
     years: 'años conectando diseño, comportamiento humano y negocio.', heroNote: 'Estrategia que se entiende. Diseño que se siente.',
-    workLabel: '01 / PROYECTOS SELECCIONADOS', workTitle: 'La complejidad,\nbien resuelta.', workIntro: 'Del dato a la decisión. De la intención a la compra. Dos maneras de hacer que una experiencia fluya.', caseCta: 'Explorar el caso',
+    workLabel: '01 / PROYECTOS SELECCIONADOS', workTitle: 'La complejidad,\nbien resuelta.', workIntro: 'Siete proyectos que conectan investigación, estrategia y diseño para resolver retos reales.', caseCta: 'Explorar el caso',
     serviceLabel: '02 / CÓMO PUEDO AYUDARTE', serviceTitle: 'Tu siguiente reto.\nNuestro punto de partida.', serviceIntro: 'Desde entender dónde se pierde el usuario hasta dar forma a un producto listo para crecer.',
     services: [
       {name:'Estrategia & research', text:'Cuando necesitas entender el problema antes de invertir en la solución.', items:['Investigación de usuarios','Diagnóstico de experiencia','Arquitectura de información'], cta:'Quiero entender a mis usuarios'},
@@ -35,7 +35,7 @@ export const copy = {
     intro: 'I design experiences that connect what people need with what your business wants to achieve.',
     heroCta: 'Let’s discuss your project', workCta: 'Explore my work',
     years: 'years connecting design, human behavior and business.', heroNote: 'Strategy that makes sense. Design you can feel.',
-    workLabel: '01 / SELECTED WORK', workTitle: 'Complexity,\nthoughtfully resolved.', workIntro: 'From data to decisions. From intent to purchase. Two ways to make an experience flow.', caseCta: 'Explore the case',
+    workLabel: '01 / SELECTED WORK', workTitle: 'Complexity,\nthoughtfully resolved.', workIntro: 'Seven projects connecting research, strategy and design to solve real challenges.', caseCta: 'Explore the case',
     serviceLabel: '02 / HOW I CAN HELP', serviceTitle: 'Your next challenge.\nOur starting point.', serviceIntro: 'From understanding where people get lost to shaping a product ready to grow.',
     services: [
       {name:'Strategy & research', text:'When you need to understand the problem before investing in a solution.', items:['User research','Experience audits','Information architecture'], cta:'I want to understand my users'},
