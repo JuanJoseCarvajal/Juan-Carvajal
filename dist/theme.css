@@ -11,3 +11,4 @@
 
 .hero h1{letter-spacing:-.06em}.brand{letter-spacing:-.055em}@media(max-width:760px){.hero h1{letter-spacing:-.05em}}
 @media(max-width:760px){.project-visual{min-height:320px}.case-page>.project-visual{min-height:350px}.hero-asterisk{top:-24px}}
+.project-visual{width:100%;min-width:0}@media(max-width:760px){.project-visual,.case-page>.project-visual{aspect-ratio:auto}.journey-node{min-width:0;flex:1}.journey-line{flex:0 0 8px}.visual-bottom{gap:10px}.visual-bottom span:last-child{flex-shrink:0}}
