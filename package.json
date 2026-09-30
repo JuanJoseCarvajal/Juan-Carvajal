@@ -1,5 +1,5 @@
 {
-  "name": "astro-portfolio",
+  "name": "granja-pro-pollo",
   "private": true,
   "version": "1.0.0",
   "type": "module",
@@ -9,6 +9,11 @@
     "preview": "astro preview"
   },
   "dependencies": {
-    "astro": "^4.16.10"
+    "@phosphor-icons/web": "^2.1.2",
+    "astro": "^4.16.10",
+    "jspdf": "^4.2.1",
+    "sass": "^1.103.1",
+    "typescript": "^5.9.3",
+    "webcoreui": "^1.5.0"
   }
 }
