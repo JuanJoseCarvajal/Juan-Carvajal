@@ -1,0 +1,15 @@
+---
+import { Image } from 'astro:assets';
+const assets = import.meta.glob<{default: ImageMetadata}>('../assets/projects/*', {eager:true});
+const {index, lang='es', image, alt, eager=false} = Astro.props;
+const es = lang === 'es';
+---
+<div class:list={['project-visual', image ? 'with-image' : (index === 0 ? 'analytics' : 'commerce')]}>
+  {image && <Image src={assets[`../assets/projects/${image}`].default} alt={alt || ''} widths={[480,960,1440]} sizes="(max-width:760px) 100vw, 60vw" format="webp" loading={eager ? 'eager' : 'lazy'} decoding="async" />}
+  {!image && <>
+  <div class="visual-top"><span>{index === 0 ? 'ANALYTICS / UX' : 'COMMERCE / UX'}</span><span>0{index+1}</span></div>
+  <div class="visual-statement">{index === 0 ? (es ? 'Datos claros.\nMejores decisiones.' : 'Clear data.\nBetter decisions.') : (es ? 'Menos pasos.\nMás posibilidades.' : 'Fewer steps.\nMore possibilities.')}</div>
+  <div class="journey">{(index === 0 ? (es ? ['Fuentes','Filtros','Decisiones'] : ['Sources','Filters','Decisions']) : (es ? ['Explorar','Elegir','Comprar'] : ['Explore','Choose','Buy'])).map((text,i) => <><span class="journey-node"><small>0{i+1}</small>{text}</span>{i<2 && <span class="journey-line"></span>}</>)}</div>
+  <div class="visual-bottom"><span>{es ? 'ARQUITECTURA DE EXPERIENCIA' : 'EXPERIENCE ARCHITECTURE'}</span><span>JC*</span></div>
+  </>}
+</div>
