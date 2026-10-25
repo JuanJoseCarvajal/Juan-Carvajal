@@ -1,0 +1,7 @@
+---
+import CaseStudy from '../../../components/CaseStudy.astro';
+import {projects} from '../../../data/projects';
+export function getStaticPaths(){return projects.map((p,index)=>({params:{id:p.slug},props:{index}}));}
+const {index}=Astro.props;
+---
+<CaseStudy index={index} lang="en"/>
