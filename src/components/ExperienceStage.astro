@@ -1,0 +1,45 @@
+---
+import { Image } from 'astro:assets';
+import screen from '../assets/projects/Disney_Handoff_03.png';
+const {lang='es'}=Astro.props;
+const es=lang==='es';
+const chapters=es ? [
+ ['Identidad','Menos fricción.','Más sentido.','Diseño experiencias que conectan lo que las personas necesitan con lo que tu negocio quiere lograr.','EXPERIENCE ARCHITECT'],
+ ['Research','Escuchar primero.','Diseñar después.','Observar, preguntar y entender el contexto antes de decidir cómo debería funcionar un producto.','01 / ENTENDER'],
+ ['Arquitectura','Dar estructura.','Crear claridad.','Conectar necesidades, contenidos y recorridos para que cada decisión tenga un lugar.','02 / CONECTAR'],
+ ['Interfaz','Cada detalle.','Un mismo lenguaje.','Convertir la estrategia en interfaces, componentes y sistemas que trabajan juntos.','03 / DISEÑAR'],
+ ['Impacto','Diseñar juntos.','Avanzar mejor.','Acompañar a producto y desarrollo para llevar las decisiones de diseño a experiencias reales.','04 / ACOMPAÑAR']
+] : [
+ ['Identity','Less friction.','More meaning.','I design experiences connecting what people need with what your business wants to achieve.','EXPERIENCE ARCHITECT'],
+ ['Research','Listen first.','Design next.','Observe, ask and understand the context before deciding how a product should work.','01 / UNDERSTAND'],
+ ['Architecture','Build structure.','Create clarity.','Connect needs, content and journeys so that every decision has a place.','02 / CONNECT'],
+ ['Interface','Every detail.','One language.','Turn strategy into interfaces, components and systems that work together.','03 / DESIGN'],
+ ['Impact','Design together.','Move forward.','Partner with product and engineering to bring design decisions into real experiences.','04 / SUPPORT']
+];
+---
+<section class="experience-stage" data-experience-stage aria-label={es?'Explora mi enfoque de diseño':'Explore my design approach'}>
+ <div class="stage-sticky wrap">
+  <div class="stage-kicker"><span>JUAN CARVAJAL / EXPERIENCE ARCHITECT</span><span>PORTFOLIO / {new Date().getFullYear()}</span></div>
+  <div class="stage-body">
+   <div class="stage-copy">
+    {chapters.map((c,i)=><div class="stage-chapter" data-chapter={i} hidden={i!==0}><span class="eyebrow stage-label"><i aria-hidden="true"></i>{c[4]}</span>{i===0?<h1>{c[1]}<br/><span>{c[2]}</span></h1>:<h2>{c[1]}<br/><span>{c[2]}</span></h2>}<p>{c[3]}</p></div>)}
+    <div class="hero-actions"><a class="button primary" href="#contact">{es?'Hablemos de tu proyecto':'Let’s talk about your project'} <span aria-hidden="true">↗</span></a><a class="text-link" href="#work">{es?'Explora mi trabajo':'Explore my work'} ↓</a></div>
+    <p class="stage-note">12+ {es?'años conectando diseño, personas y negocio.':'years connecting design, people and business.'}</p>
+   </div>
+   <div class="stage-object-area">
+    <div class="stage-watermark" aria-hidden="true">DESIGN</div>
+    <div class="object-controller" tabindex="0" role="group" aria-label={es?'Vista interactiva del sistema de diseño':'Interactive design-system view'} aria-describedby="stage-instructions">
+     <div class="design-object" aria-hidden="true">
+      <div class="object-back"><span>JC / SYSTEM 01</span><span>✳</span></div>
+      <div class="object-screen"><div class="object-toolbar"><span>● ● ●</span><span>DESIGN / CONNECTED</span><span>↗</span></div><Image src={screen} alt="" widths={[480,960]} sizes="(max-width:760px) 85vw, 45vw" loading="eager" format="webp"/><div class="object-footer"><span>RESEARCH → SYSTEM → EXPERIENCE</span><span>01—07</span></div></div>
+      <div class="object-swatch"><span>AA</span><div><i></i><i></i><i></i></div><small>JUAN CARVAJAL<br/>DESIGN LANGUAGE</small></div>
+      <div class="object-chip">↗ <span>Human<br/>by design.</span></div>
+     </div>
+    </div>
+    <div class="object-controls"><span id="stage-instructions">{es?'Arrastra o usa las flechas para girar':'Drag or use arrow keys to rotate'}</span><button type="button" data-turn="-1" aria-label={es?'Girar a la izquierda':'Rotate left'}>↶</button><button type="button" data-reset>{es?'Restablecer':'Reset'}</button><button type="button" data-turn="1" aria-label={es?'Girar a la derecha':'Rotate right'}>↷</button></div>
+   </div>
+  </div>
+  <nav class="stage-chapters" aria-label={es?'Etapas del diseño':'Design chapters'}>{chapters.map((c,i)=><button type="button" data-stage={i} aria-current={i===0?'step':undefined}><span>0{i+1}</span>{c[0]}<i aria-hidden="true"></i></button>)}</nav>
+ </div>
+</section>
+<script src="../scripts/experience-stage.ts"></script>

@@ -18,7 +18,9 @@ const home = lang === 'es' ? '/' : '/en/';
     <title>{title || t.title}</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="alternate" hreflang={lang === 'es' ? 'en' : 'es'} href={alternate} />
+    <link rel="stylesheet" href="/tokens.css" />
     <link rel="stylesheet" href="/theme.css" />
+    <link rel="stylesheet" href="/experience.css" />
     <script is:inline src="/theme.js"></script>
   </head>
   <body>
@@ -36,7 +38,7 @@ const home = lang === 'es' ? '/' : '/en/';
       </div>
     </header>
     <main id="main"><slot /></main>
-    <footer class="site-footer"><a class="brand" href={home}><img src="/brand/juan-carvajal-logo.png" alt="Juan Carvajal" /></a><p>{t.footer}</p><span>© {new Date().getFullYear()}</span></footer>
+    <footer class="site-footer"><a class="brand" href={home}><img src="/brand/juan-carvajal-logo.png" alt="Juan Carvajal" /></a><p>{t.footer}</p><a class="ds-link" href="/design-system/">Design system ↗</a><span>© {new Date().getFullYear()}</span></footer>
     <script>
       const menu = document.querySelector<HTMLButtonElement>('.menu-toggle');
       const nav = document.querySelector('#navigation');
