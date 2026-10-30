@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Portfolio - Juan Carvajal</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
+            <a class="navbar-brand js-scroll-trigger" target="_self" href="index.html">
+                <span class="d-none d-lg-block">
+                  <img style="max-width: 25px;" class="img-fluid logo" src="img/close.png" alt="">
+                </span>
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav nav-tab">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger active" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#problem">Problem</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#solution">Solution</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#result">Result</a></li>
+                </ul>
+            </div>
+        </nav>
+<!-- Page Content-->
+ <!-- Page Content Title-->
+
+ <div class="wizard-label">JUAN <span class="text-accent">CARVAJAL</span> - I’m a WIZARD — Sr. UX/UI and Product Designer</div>
+
+
+      <section class="internal" id="about">
+        <div class="my-auto">
+          <h2 class="mb-5 text-primary">About</h2>
+            <p>We are what our concept says: A software, technological, specialized services and
+              staff augmentation company with offices in the United States and in Colombia.</p>
+            <img class="internas" src="img/Yuxi_pasific_Web.png">
+        </div>
+        
+      </section>
+      <section class="internal" id="problem">
+            <div class="my-auto">
+              <h2 class="mb-5 text-primary">Problem</h2>
+                <p>We identified that there was a communication problem with the end user, they did not
+                  feel engache with the brand.</p>             
+                <p>User experiences were inconsistent and varying in quality across media channels, it was difficult
+                  even to the people that already work for yuxi understand quite well what was the main goal of the business.</p>
+                <p>There was a risk decision but also an opportunity to make a 360 change, so we build from
+                  scratch one solid concept that drive the company to a new horizon to gain a bigger portion 
+                  of the market place.</p>
+                  <h5>Now We are YUXI GLOBAL</h5>
+                <img class="internas" src="img/logos_yuxi.png">
+            </div>
+
+          </section>
+          <section class="internal section2" id="solution">
+            <div class="my-auto">
+              <h2 class="mb-5 text-primary">Solution</h2>            
+                <p>We focus on what we do, how we would like to be seen, and how to grow up our staff.</p>
+                <p>The previous line helped us to define the information architecture.</p>  
+                <h1 class="mb-0">SERVICES - CAREERS - MEDIA</h1> 
+                <p>That have defined a clear way to express and communicate what is YUXI
+                  about and get us to know better from our clients and future workers.</p> 
+                  <img class="internas" src="img/IA_Yuxi.png">
+
+            </div>
+
+          </section>
+          <section class="internal" id="result">
+              <div class="my-auto">
+                <h2 class="mb-5 text-primary">Result</h2>            
+                <p>the strategy was created in a ecosystem that convey all the main goals of the digital presence,
+                  clear KPI and meaningful content keep the user engage with the brand.</p>
+                    <img class="internas" src="img/yuxiglobal_home.png">
+                    <p></p>
+              </div>
+  
+            </section>
+
+
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg">
+  </div>
+
+   <!-- Bootstrap core JS-->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Core theme JS-->
+   <script src="js/scripts.js"></script>
+   <script>
+       document.addEventListener("DOMContentLoaded", function () {
+           const navLinks = document.querySelectorAll(".nav-link");
+       
+           navLinks.forEach(link => {
+               link.addEventListener("click", function () {
+                   navLinks.forEach(nav => nav.classList.remove("active"));
+                   this.classList.add("active");
+               });
+           });
+       });
+       </script>
+
+  <script>
+      function openModal(img) {
+          document.getElementById("imageModal").style.display = "flex";
+          document.getElementById("modalImg").src = img.src;
+      }
+
+      function closeModal() {
+          document.getElementById("imageModal").style.display = "none";
+      }
+  </script>
+
+</body>
+</html>

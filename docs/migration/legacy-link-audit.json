@@ -1,0 +1,11 @@
+{
+  "missing_local_references": [],
+  "external_references": [
+    "https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js",
+    "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css",
+    "https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js",
+    "https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i",
+    "https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700",
+    "https://use.fontawesome.com/releases/v6.3.0/js/all.js"
+  ]
+}

@@ -32,3 +32,7 @@ The site generates Spanish and English pages. Contact prepares an email in the v
 - `public/`: static assets and shared theme files.
 
 Keep `package-lock.json` committed so local and deployment builds install the same dependency versions.
+
+## Hostinger content archive
+
+The full original site is preserved in `public/legacy/`. See [the preservation report](docs/migration/hostinger-preservation.md) and run `python3 scripts/verify-hostinger-archive.py --build` after building to verify every archived file.
