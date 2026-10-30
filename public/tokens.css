@@ -1,0 +1,37 @@
+/* Brand primitives sampled from the published portfolio, 2026-10-30. */
+:root {
+  --brand-orange: #f93202;
+  --brand-violet: #7c40ff;
+  --brand-ink: #161616;
+  --brand-white: #ffffff;
+  --gray-100: #e2e2e2;
+  --gray-500: #707070;
+  --surface: var(--brand-white);
+  --text: var(--brand-ink);
+  --muted: #5a5a5a;
+  --border: #dedede;
+  --accent: #b72400; /* Small text on white: accessible brand-orange shade. */
+  --orange: var(--brand-orange);
+  --card: #f5f5f5;
+  --header-bg: rgb(255 255 255 / .92);
+  --on-brand: var(--brand-ink);
+  --focus: var(--brand-violet);
+  --space-1: .25rem; --space-2: .5rem; --space-3: .75rem;
+  --space-4: 1rem; --space-6: 1.5rem; --space-8: 2rem;
+  --space-12: 3rem; --space-16: 4rem; --space-24: 6rem;
+  --radius-sm: .5rem; --radius-md: 1rem; --radius-lg: 1.5rem; --radius-pill: 999px;
+  --font-body: 'DM Sans', Arial, sans-serif;
+  --font-display: 'Manrope', Arial, sans-serif;
+  --duration-fast: 160ms; --duration-base: 300ms; --duration-scene: 700ms;
+  --ease-out: cubic-bezier(.22,1,.36,1);
+  color-scheme: light;
+}
+[data-theme=dark] {
+  --surface: #0f0f0f; --text: #ffffff; --muted: #bcbcbc;
+  --border: #343434; --accent: #ff7956; --card: #1c1c1c;
+  --header-bg: rgb(15 15 15 / .92); --focus: #b69aff;
+  color-scheme: dark;
+}
+@media(prefers-reduced-motion:reduce) {
+  :root { --duration-fast: 0ms; --duration-base: 0ms; --duration-scene: 0ms; }
+}

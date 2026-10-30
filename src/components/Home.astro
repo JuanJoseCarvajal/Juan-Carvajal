@@ -1,5 +1,6 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import ExperienceStage from './ExperienceStage.astro';
 import ProjectVisual from './ProjectVisual.astro';
 import { copy, type Locale } from '../data/i18n';
 import { experiences, education } from '../data/content';
@@ -9,12 +10,7 @@ const t=copy[lang]; const es=lang==='es'; const base=es ? '' : '/en';
 const projects=localizedProjects(lang);
 ---
 <Layout lang={lang} alternate={es ? '/en/' : '/'}>
-  <section class="hero wrap" aria-labelledby="hero-title">
-    <div class="hero-eyebrow"><span class="eyebrow">{t.eyebrow}</span><span class="edition">PORTFOLIO / {new Date().getFullYear()}</span></div>
-    <h1 id="hero-title">{t.hero1}<br/><span>{t.hero2}</span><span class="hero-asterisk" aria-hidden="true">✳</span></h1>
-    <div class="hero-bottom"><div><p class="hero-intro">{t.intro}</p><div class="hero-actions"><a class="button primary" href="#contact">{t.heroCta}</a><a class="text-link" href="#work">{t.workCta}</a></div></div><div class="hero-proof"><strong>12<span>+</span></strong><p>{t.years}</p></div></div>
-    <div class="hero-rule"><span>{t.heroNote}</span><span aria-hidden="true">{es ? 'DESLIZA PARA EXPLORAR ↓' : 'SCROLL TO EXPLORE ↓'}</span></div>
-  </section>
+  <ExperienceStage lang={lang} />
   <section id="work" class="section wrap" aria-labelledby="work-title">
     <div class="section-heading"><span class="eyebrow">{t.workLabel}</span><div><h2 id="work-title">{t.workTitle}</h2><p>{t.workIntro}</p></div></div>
     <div class="project-grid">{projects.map((p,i)=><a class="project-card" href={`${base}/work/${p.slug}/`}><ProjectVisual index={i} lang={lang} image={p.cover} alt={p.title} /><div class="project-meta"><span>{p.client} · {p.category}</span><span>0{i+1}</span></div><h3>{p.title}</h3><p>{p.shortDescription}</p><div class="project-result"><span>{p.outcome}</span></div><span class="case-link">{t.caseCta}<span aria-hidden="true">+</span></span></a>)}</div>
