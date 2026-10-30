@@ -1,0 +1,487 @@
+{
+  "domain": "juancarvajal.site",
+  "captured_date": "2026-10-30",
+  "inventory_entries": 103,
+  "excluded_files": [
+    ".DS_Store",
+    "assets/.DS_Store",
+    "assets/img/.DS_Store"
+  ],
+  "files": [
+    {
+      "path": "Apex_Case_Study.html",
+      "size_bytes": 8282,
+      "sha256": "f99247b207ed2d693b1d9f07649265092a01cf488ac72e6876e54d8acaa08c3b"
+    },
+    {
+      "path": "BrainShark-Case-Study.html",
+      "size_bytes": 10451,
+      "sha256": "5d502e4747465d7cbf171ae7bbd626e2d39b45d5173d0a674e564d3b4c69aaba"
+    },
+    {
+      "path": "BuildingLink_Case_Study.html",
+      "size_bytes": 13067,
+      "sha256": "f9eccfb7938de84862bed9cf686d0471576d25f21388b1442458a70b706d9363"
+    },
+    {
+      "path": "Carnival_Case_Study.html",
+      "size_bytes": 7904,
+      "sha256": "87a1cb227b246c278ed19e43e01a23975430ca2e1c6a1644b5a331c5c15c9a66"
+    },
+    {
+      "path": "Comcast_Case_Study.html",
+      "size_bytes": 10163,
+      "sha256": "ab5cf04282c408e9ededb482ed233d42257afb4889f7c0648a314af3977fbe08"
+    },
+    {
+      "path": "Disney_Case_Study.html",
+      "size_bytes": 12417,
+      "sha256": "e57604b010c3a85cfb182f03617284875e0619ef3afb60e7cbb375a1cecfa034"
+    },
+    {
+      "path": "Yuxi_Case_Study.html",
+      "size_bytes": 6449,
+      "sha256": "4bff9fbaa893d130786f2da02daad4ebf85884fa99318d68393bd7d7c7aaa846"
+    },
+    {
+      "path": "assets/img/Juan_Carvajal_Logo.png",
+      "size_bytes": 8572,
+      "sha256": "a5ff00d268f1b1fb15705d90d77b79d5a4a73f056e0e43ed4732ca9e114fafbd"
+    },
+    {
+      "path": "assets/img/Juan_Carvajal_Logo_New.svg",
+      "size_bytes": 8389,
+      "sha256": "c43d956dfbf6972cee102afc7e8a4cf06bb35e05447b64dc0acaa8e903e6ed5d"
+    },
+    {
+      "path": "assets/img/favicon.ico",
+      "size_bytes": 23462,
+      "sha256": "8b1060f193768c55bc48dede8ba8da9be6c93f8e6dcae946e36f1a8956b7269b"
+    },
+    {
+      "path": "css/styles.css",
+      "size_bytes": 242818,
+      "sha256": "89c8791b866f3df98fbba7b7cd37b3643b0f7ca69d980bad739251170530258d"
+    },
+    {
+      "path": "css/swiper-bundle.min.css",
+      "size_bytes": 18451,
+      "sha256": "ee704541ea286250ce3546ffa111590b36f18f56a5f693685269d0e83837edd3"
+    },
+    {
+      "path": "img/AI.png",
+      "size_bytes": 90652,
+      "sha256": "06e0b83048f0e5b50bd1a6475f598a002ed920d8443d7169de4d7622120b1929"
+    },
+    {
+      "path": "img/Accesibility-01.png",
+      "size_bytes": 2515288,
+      "sha256": "b5d9f2097d58a8a2ed6bd501e130496c19a3c6f3684eefb531332438067bacff"
+    },
+    {
+      "path": "img/Accesibility-02.png",
+      "size_bytes": 453845,
+      "sha256": "d7fe93bde6d9f072da111e7ed0d777b55d0249833d3d11baf67f9ce13e1a8fe3"
+    },
+    {
+      "path": "img/Accesibility-03.png",
+      "size_bytes": 1386842,
+      "sha256": "6fadd13d8c5e26a89de36a8d5db68894e806171d1e7f0fd4fc4b6e19d75cb02f"
+    },
+    {
+      "path": "img/Accesibility-04.png",
+      "size_bytes": 658011,
+      "sha256": "2df3bccb040c5ca31d513c901bd30d1e7f8551c1eb8532e1ccf15b7ad5c55fb0"
+    },
+    {
+      "path": "img/Accesibility-05.png",
+      "size_bytes": 526903,
+      "sha256": "a1ef7a69971049c2b9bdb1dc4c021e756eb6d31a7710f10e3c10f2d6735e15d8"
+    },
+    {
+      "path": "img/Accesibility-06.png",
+      "size_bytes": 1664108,
+      "sha256": "69e87d2f073aa83552ea51038bae3cbd9435fca00c0ca65eeaa3148c684b4be1"
+    },
+    {
+      "path": "img/Apex.jpg",
+      "size_bytes": 137163,
+      "sha256": "390d246ede4d0804e66edd9cabe37ee9e7f8f4d6fd1866a66a1e3509765e7425"
+    },
+    {
+      "path": "img/Apex_logo.png",
+      "size_bytes": 24015,
+      "sha256": "fd7bff90eaf6220da38069bbf265a5242c383dd2b480182acc3ad2e9770c046a"
+    },
+    {
+      "path": "img/App_Arquitecture.jpg",
+      "size_bytes": 160993,
+      "sha256": "ce62818c2d6d0f64c582335582acab77c80bdeeff23d04fd7061b04f4aa7b0d5"
+    },
+    {
+      "path": "img/BNSK.png",
+      "size_bytes": 51741,
+      "sha256": "35b838839d240e551bbb5df1c13f83dce3b9c6e5cc91ab3bf26266ffe9233a10"
+    },
+    {
+      "path": "img/BrainShark.png",
+      "size_bytes": 1008930,
+      "sha256": "9892400e084142cc53441059f5d200f2ce236970ae76524383a21e42f496076f"
+    },
+    {
+      "path": "img/BuildingLink.png",
+      "size_bytes": 1699205,
+      "sha256": "4feac28e0c1409471cd49347c37196dcc47ec5c197d366bd9b646df7b0125e40"
+    },
+    {
+      "path": "img/BuildingLink_Logo.png",
+      "size_bytes": 15032,
+      "sha256": "807f5ae05cb660192155dac30be2037bd33d1c094ab44eb03620d20421255cc9"
+    },
+    {
+      "path": "img/Comcast.jpg",
+      "size_bytes": 141021,
+      "sha256": "b010a696ae963b8718c96e78725d2d6898b1b9fd272caeb8c94655125a98b72a"
+    },
+    {
+      "path": "img/Comcast_Problem.jpg",
+      "size_bytes": 181080,
+      "sha256": "286403e3334dc823f096cb8eb9751b91d3ddb19bb7b93e8dd5238625a032be16"
+    },
+    {
+      "path": "img/Comcast_logo.png",
+      "size_bytes": 27547,
+      "sha256": "4208848eb8c007a4bdbc4cd547b4e467825ceba84075d1242b3710e0304d041b"
+    },
+    {
+      "path": "img/Disney-01.png",
+      "size_bytes": 287207,
+      "sha256": "5bb2f5254c069119469abd450b4365a209e06b830ad62ed1f18239d4b34943c6"
+    },
+    {
+      "path": "img/Disney-02.png",
+      "size_bytes": 363401,
+      "sha256": "c0213d37f2555b77bedf58b37e68afcb88d7f89bfbb9683a45ac99be39688a56"
+    },
+    {
+      "path": "img/Disney-03.png",
+      "size_bytes": 215285,
+      "sha256": "7d5fb7f4079d99b9ead4d2bd55b2a833a31df8a9bc02e093deacdc4688626404"
+    },
+    {
+      "path": "img/Disney_DS_01.png",
+      "size_bytes": 61294,
+      "sha256": "b948600b06c20965f899de04043006089b12c647e6e8e3d02423c9aa9bc14add"
+    },
+    {
+      "path": "img/Disney_DS_02.png",
+      "size_bytes": 243922,
+      "sha256": "d63ec444b49b2025865b3b7f116fd3281fd174f46655cd6efaa1eafb05f28ee9"
+    },
+    {
+      "path": "img/Disney_DS_03.png",
+      "size_bytes": 229706,
+      "sha256": "f446c789892139249c4e891bf69f070d0ee35c3951e514d17c19fd441c8b7838"
+    },
+    {
+      "path": "img/Disney_DS_04.png",
+      "size_bytes": 225352,
+      "sha256": "0d42b6601c3ec96809b29e1f44bf95469a03a819e73b3f32932e42dd4d71d2eb"
+    },
+    {
+      "path": "img/Disney_DS_05.png",
+      "size_bytes": 212551,
+      "sha256": "215539f09efd7b63dead2bf9915067879934d7fbd285369d4c7f222a3013b542"
+    },
+    {
+      "path": "img/Disney_Flows_01.png",
+      "size_bytes": 230960,
+      "sha256": "3ee89eb1d0c957a9fd1b03a9dd9dab8a1d004a1bf1d48805dd11e3897e03ecdc"
+    },
+    {
+      "path": "img/Disney_Flows_02.png",
+      "size_bytes": 707603,
+      "sha256": "69e9b4754f66e8fa74147e7c3e5b02555d2654b3d8d21d328cf2b38b0f407e8f"
+    },
+    {
+      "path": "img/Disney_Flows_03.png",
+      "size_bytes": 2246736,
+      "sha256": "59a90d54b804e507f8839e452d36a0651f1b7a637a8272e720b3499fd6c3bd3e"
+    },
+    {
+      "path": "img/Disney_Handoff_01.png",
+      "size_bytes": 103419,
+      "sha256": "5a0344ddea586600fd5c68bd5036aeb4d836b5fdcffdffa2cf8b52a557c57925"
+    },
+    {
+      "path": "img/Disney_Handoff_02.png",
+      "size_bytes": 86353,
+      "sha256": "47ec3a4b6706a35a69f6f4ef10274ce88e509936c5bde1648355400db506bc65"
+    },
+    {
+      "path": "img/Disney_Handoff_03.png",
+      "size_bytes": 1360603,
+      "sha256": "bbb4861a9d11a6a0978b64d498884d92c9025b0a069dc71a365b346b520c6879"
+    },
+    {
+      "path": "img/Disney_Logo.png",
+      "size_bytes": 85836,
+      "sha256": "956c46618b47b481eeb46370b988223c6a8ffd27e1655f109a156957344af96a"
+    },
+    {
+      "path": "img/Goal.png",
+      "size_bytes": 272444,
+      "sha256": "c83b26d6386460a9954c22612d6a716f1f47a9280d36b1bcf255b9575e7138cd"
+    },
+    {
+      "path": "img/IA_Yuxi.png",
+      "size_bytes": 410455,
+      "sha256": "226099876f7089855c151df8deb44a3abf259acabf33a2c5e516299e7773bf9c"
+    },
+    {
+      "path": "img/Info_Archi-01.png",
+      "size_bytes": 2503138,
+      "sha256": "7b607bb8231ac34b028ecde9f86e851fa31e9c767e4d8c488ebd09c3f38ba8d5"
+    },
+    {
+      "path": "img/Info_Archi-02.png",
+      "size_bytes": 368602,
+      "sha256": "06d6c27e881f550e74fea39c6e52ce0fd9834f30759695cef5e8be3bb7ed6269"
+    },
+    {
+      "path": "img/Info_Archi-03.png",
+      "size_bytes": 457480,
+      "sha256": "8ed7077a1fffa39994a1434fbbc6af22e5eccd94474500d3e8863f28a8e2e76e"
+    },
+    {
+      "path": "img/Info_Archi-04.png",
+      "size_bytes": 358917,
+      "sha256": "2f7e3e269f4e0e5855cc8eed1d8be2b9719746aa683b01ab9127a75c9ef5e7b4"
+    },
+    {
+      "path": "img/JJCS_Logo.svg",
+      "size_bytes": 3870,
+      "sha256": "bb98236b4b9bb8ab488b4ea0603b9fc849b85156312ef05b3082564042c5fe1a"
+    },
+    {
+      "path": "img/Logo_JC.png",
+      "size_bytes": 9420,
+      "sha256": "74d26dee4974ed9f2f46f74ba3edbed6896e6f80306acdb53d76d003e36a94ca"
+    },
+    {
+      "path": "img/MacBook.png",
+      "size_bytes": 258620,
+      "sha256": "c942e79935caa84ae14c9253cf89d01f7c13429b896163f43f4c39dc8e2fe5ac"
+    },
+    {
+      "path": "img/Personas.png",
+      "size_bytes": 621869,
+      "sha256": "e7356fab5282f475158f57ff78d03ae4a0ecc7d9bc407e1e0a60d077747817b4"
+    },
+    {
+      "path": "img/Personas_Comcast.png",
+      "size_bytes": 311984,
+      "sha256": "bd08e5b97d2c19b414a58657d238c9e4dffb0ebf8373e2e60cb1389f99769f75"
+    },
+    {
+      "path": "img/Process.png",
+      "size_bytes": 753891,
+      "sha256": "08a0bb67040daf11a3c4cac8a191ebc65c2cb47604f96d3690002a00ff92b7e4"
+    },
+    {
+      "path": "img/Specs_Apex.jpg",
+      "size_bytes": 207627,
+      "sha256": "93858f38302370022b7bad77e228ad9a94df3381a5f0b9d626fd793a799442ec"
+    },
+    {
+      "path": "img/UI_Audit-01.png",
+      "size_bytes": 857880,
+      "sha256": "74cd6f173eeb925ac322a990ed18e17b757be31b16fbca17b0042d321a883e01"
+    },
+    {
+      "path": "img/UI_Audit-02.png",
+      "size_bytes": 201033,
+      "sha256": "8d79638de2015eeca9246c2585f32cb0a5bb94af122ff936c6175f21d7f97732"
+    },
+    {
+      "path": "img/UI_Audit-03.png",
+      "size_bytes": 363643,
+      "sha256": "7a3264a9a805ad70b41e64113f0bf3a7cabc88a7512adc19d4f356d475de7209"
+    },
+    {
+      "path": "img/UI_Audit-04.png",
+      "size_bytes": 304816,
+      "sha256": "404ead1c88ac3e3f130ade842645479fed0d5c397569f7bf32b7ce741e4e88bd"
+    },
+    {
+      "path": "img/UI_Audit-05.png",
+      "size_bytes": 333933,
+      "sha256": "01f37a3deedc860303ef91dd8d909a2a14f7b3f94b8e338b4b612ab3a1f3e508"
+    },
+    {
+      "path": "img/UI_Audit-06.png",
+      "size_bytes": 135204,
+      "sha256": "1e947c6f61ad570661d94df9cfad225215cb5bf2ac54c4c5da49782a2d956269"
+    },
+    {
+      "path": "img/UI_Audit-07.png",
+      "size_bytes": 325580,
+      "sha256": "b01caa124e0cb483a558772d390c9a491ea1885401ab32602c82a00d82a38fb7"
+    },
+    {
+      "path": "img/UI_Audit-08.png",
+      "size_bytes": 375722,
+      "sha256": "c3c73d8bf607f197cd477428e045d8262d57a48102697781e11b33bc834414b2"
+    },
+    {
+      "path": "img/User-Journey-Agent-Avaya.png",
+      "size_bytes": 274226,
+      "sha256": "5da837bf2a7f0bc6600f41e38bb6475c266a3981ef163c19ed5b6601fb971950"
+    },
+    {
+      "path": "img/User_Flow_Apex.jpg",
+      "size_bytes": 160903,
+      "sha256": "f44bfe144da260b9219402975afc82a3b6e21bb901efe15ee76e54dbfee169cd"
+    },
+    {
+      "path": "img/User_Flows-01.png",
+      "size_bytes": 2495633,
+      "sha256": "9f47aadfed83a59f91e9f4a439c511cf5f6a7f4e807e656c19ee93c15f92bff3"
+    },
+    {
+      "path": "img/User_Flows-02.png",
+      "size_bytes": 269511,
+      "sha256": "36b0a1c0171807e50662ffdc0f2cc5c058ebd860c88cdaca47d1fc7dc458e2a3"
+    },
+    {
+      "path": "img/User_Flows-03.png",
+      "size_bytes": 344426,
+      "sha256": "e69f40adc4fa0937db1b5f9354bd085bf3fc8e45be56c7e2e953b8a63d6d9754"
+    },
+    {
+      "path": "img/User_Flows-04.png",
+      "size_bytes": 279004,
+      "sha256": "eac8943a3dd20f2c84003ddf97bbc50cfc156e48815f4797d204600346d2a603"
+    },
+    {
+      "path": "img/User_Flows-05.png",
+      "size_bytes": 273693,
+      "sha256": "afe9d5ee16dd53440d7197010583bce493169f92d766befaf7e802853c951e69"
+    },
+    {
+      "path": "img/User_Flows-06.png",
+      "size_bytes": 330634,
+      "sha256": "e6f7904fde28eb83ad65b61604a40e0c4f1fc5e38c69b9c36a8d37aba97f9d06"
+    },
+    {
+      "path": "img/User_Journey_maps.jpg",
+      "size_bytes": 1831934,
+      "sha256": "394507b5f243b6f517d709e234e2d0f3ebd1ba20a9fbc54b059bffb23df693ab"
+    },
+    {
+      "path": "img/Wireframe_Apex.jpg",
+      "size_bytes": 172390,
+      "sha256": "b0e45f8d42b10d28abdfe17ec7a967a1276919628ad9e02e9c82ddec972521cd"
+    },
+    {
+      "path": "img/Wireframe_Comcast.jpg",
+      "size_bytes": 139726,
+      "sha256": "e7a6faed174ebb8a123c8d66f6e9d1ce5ccda04fc939fb1258d444f7a67bc10a"
+    },
+    {
+      "path": "img/Wireframing.png",
+      "size_bytes": 791707,
+      "sha256": "cacf9d6083c3f0cc4f946718969b25f79da3b151a49c6a4cace4a243bd6d13d7"
+    },
+    {
+      "path": "img/WorkBench_Design_System.mp4",
+      "size_bytes": 3087485,
+      "sha256": "0bdc1b700552a0bb8f32e58cbd8a4d336fe9d7f7af2db58eda905b570b6d0066"
+    },
+    {
+      "path": "img/YuxiPacific.png",
+      "size_bytes": 16250,
+      "sha256": "7636bd25a2fb334ac73919198328c6799d63a89b8c3ac10e143db611e20fd9a6"
+    },
+    {
+      "path": "img/Yuxi_logo.png",
+      "size_bytes": 47908,
+      "sha256": "1ed47386784c1d0a7d5780e0cb094e4e567dc30919ee6218c98f92195ac70e1c"
+    },
+    {
+      "path": "img/Yuxi_now.png",
+      "size_bytes": 297071,
+      "sha256": "1af7f92e4078b93f97142a6bf20b9d4fe13ad01e304c1f7e8ca3ba897949eafb"
+    },
+    {
+      "path": "img/Yuxi_pasific_Web.png",
+      "size_bytes": 933703,
+      "sha256": "33469cd189eb90ca544059762df8cfe926195b9d695affe851433a4f97feb309"
+    },
+    {
+      "path": "img/app.png",
+      "size_bytes": 537597,
+      "sha256": "d8f0bac74e2fe8b4d62cca08afe775a91dd24db855fadb6236e31addbc1e5075"
+    },
+    {
+      "path": "img/app_solution.jpg",
+      "size_bytes": 119142,
+      "sha256": "7f07b6506e3d1f7fff05b58dd8ad37e284d920ada1ee07fe14c35b0eb94d1bb9"
+    },
+    {
+      "path": "img/close.png",
+      "size_bytes": 551,
+      "sha256": "801170065d64529e2baae0f99143ed69c540d55aedc09f81f5bb00025660ec43"
+    },
+    {
+      "path": "img/favicon.ico",
+      "size_bytes": 15406,
+      "sha256": "729ec140abf79bdb1d9dcae788a78b453d5bf851d467b6d6a76add1be0fe975d"
+    },
+    {
+      "path": "img/flow_evaluation.jpg",
+      "size_bytes": 118411,
+      "sha256": "24b93faff81a9a7afcc1aa04770bdd87b6855b9a9587bc00500ed2c1ce4b118d"
+    },
+    {
+      "path": "img/hd-mocks.png",
+      "size_bytes": 775239,
+      "sha256": "05a276679a10ba699148356492d8a9ef92ffde38ddf150704e2a4d6c309fb0ea"
+    },
+    {
+      "path": "img/intro.jpg",
+      "size_bytes": 795150,
+      "sha256": "f36a7e36ddf0eda95176a38a6aecef3801ffe1e539f9ac0e195a158efd79f3a1"
+    },
+    {
+      "path": "img/logos_yuxi.png",
+      "size_bytes": 26668,
+      "sha256": "06c285461901d82f15d9adab60a04c8c8c05d4ceddf750a0f615b42ab5c34e48"
+    },
+    {
+      "path": "img/problema.png",
+      "size_bytes": 358070,
+      "sha256": "42b1b31a0bd4fd46909207abf4f73ff2181aecea3654a06f37dd213ad7f4d252"
+    },
+    {
+      "path": "img/resoult_Apex.jpg",
+      "size_bytes": 193120,
+      "sha256": "82c7d4a0addbab4ba650f578c649897d144739069361b722677b395fcddc8749"
+    },
+    {
+      "path": "img/yuxiglobal_home.png",
+      "size_bytes": 1075711,
+      "sha256": "c6a1b454603342d92efa7f1202dc3c1ada37c8ccb129117aec6cac4cc62a825b"
+    },
+    {
+      "path": "index.html",
+      "size_bytes": 32638,
+      "sha256": "ebe9afa5a5ba199d23beb2c1c56b1567ba5d8738e98f63592f988788d27811bb"
+    },
+    {
+      "path": "js/scripts.js",
+      "size_bytes": 1100,
+      "sha256": "8e3ce29470837392ab753863abcf1db1bf2525dc22c6d0ab7bff0f8b90ed00d8"
+    }
+  ]
+}

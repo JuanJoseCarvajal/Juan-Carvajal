@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Portfolio - Juan Carvajal</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
+            <a class="navbar-brand js-scroll-trigger" target="_self" href="index.html">
+                <span class="d-none d-lg-block">
+                  <img style="max-width: 25px;" class="img-fluid logo" src="img/close.png" alt="">
+                </span>
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav nav-tab">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger active" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#problem">Problem</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#solution">Solution</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#result">Result</a></li>
+                </ul>
+            </div>
+        </nav>
+<!-- Page Content-->
+ <!-- Page Content Title-->
+
+ <div class="wizard-label">JUAN <span class="text-accent">CARVAJAL</span> - I’m a WIZARD — Sr. UX/UI and Product Designer</div>
+
+    <section class="internal" id="about">
+        <h2 class="mb-5 text-primary">About</h2>
+                <p>
+                    Carnival Cruise Lines is one of the world’s leading cruise operators, providing joyful vacation experiences to millions of guests every year.
+                </p>
+                <p>
+                    Their digital ecosystem serves both end customers and internal agents, ensuring seamless booking, order management, and post-purchase support across multiple channels.
+                </p>
+                    As part of their digital transformation strategy, the company aimed to unify its fragmented tools into a cohesive, scalable platform one that enables efficiency, consistency, and delightful user experiences from shore to ship.
+                </p>
+                <img src="img/intro.jpg" alt="Order Management System" style="width: 70%;">
+
+    </section>
+
+    <section class="internal" id="problem">
+        <h2 class="mb-5 text-primary">Problem</h2>
+        <p>Carnival needed to redesign and centralize its order management system an internal eCommerce platform used by call center agents to create, modify, and manage guest orders in real-time.</p>
+                <p>The challenge was to streamline the entire end-to-end journey (from catalog search to order completion and after-sales modifications) while maintaining accuracy and consistency across multiple systems.</p>
+                <p>Additionally, the project required a strategic design framework to ensure that all digital products web, internal tools, and guest-facing applications—shared a unified visual and interaction language.</p>
+                <img src="img/MacBook.png" alt="Order Management System" style="width: 70%;">
+    </section>
+
+    <section class="internal section2" id="solution">
+        <h2 class="mb-5 text-primary">Solution</h2>
+                <p>
+                    To design an end-to-end Order Management and eCommerce platform that enables Carnival Cruise agents to efficiently manage guest transactions while ensuring a consistent, accessible, and delightful experience across all digital products through a unified design system.
+                </p>
+                <p>
+                    As the Senior UX/UI and Product Designer, my role combined strategy, consultancy, and execution:
+                </p>
+                <ul>
+                    <li>Led the UX discovery and research activities, aligning user needs with business priorities.</li>
+                    <li> Designed and documented user flows, wireframes, prototypes, and UI specifications across multiple modules of the OMS.</li>
+                    <li>Defined the UX/UI strategy to migrate existing layouts and interactions into the new SAP-based design system.</li>
+                    <li>Advocated for accessibility standards (WCAG 2.1) and responsive adaptability across screens.</li>
+                    <li>Collaborated closely with development teams and product stakeholders to ensure a seamless design-to-development handoff.</li>
+                    <li>Established continuous improvement loops, encouraging feedback-driven iteration and long-term design system governance.</li>
+                </ul>
+                <img src="img/Process.png" alt="Order Management System" style="width: 70%;">
+                
+    </section>
+
+    <section class="internal" id="result">
+        <h2 class="mb-5 text-primary">Result</h2>
+<ul>
+                    <li>Reduced average order management time by over 30% through optimized workflows.</li>
+                    <li>Established a single source of truth for all UI components, drastically reducing design inconsistencies across the ecosystem.</li>
+                    <li>Enhanced agent satisfaction by simplifying complex tasks and creating an intuitive, visually coherent interface.</li>
+                    <li>Provided Carnival Cruise with a strategic UX/UI foundation ready for future scalability and integration across other enterprise systems.</li>
+                </ul>
+                <img src="img/Goal.png" alt="Order Management System" style="width: 70%;">
+    </section>
+
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="modalImg">
+    </div>
+
+     <!-- Bootstrap core JS-->
+     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+     <!-- Core theme JS-->
+     <script src="js/scripts.js"></script>
+     <script>
+         document.addEventListener("DOMContentLoaded", function () {
+             const navLinks = document.querySelectorAll(".nav-link");
+         
+             navLinks.forEach(link => {
+                 link.addEventListener("click", function () {
+                     navLinks.forEach(nav => nav.classList.remove("active"));
+                     this.classList.add("active");
+                 });
+             });
+         });
+         </script>
+
+    <script>
+        function openModal(img) {
+            document.getElementById("imageModal").style.display = "flex";
+            document.getElementById("modalImg").src = img.src;
+        }
+
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
+        }
+    </script>
+
+</body>
+</html>

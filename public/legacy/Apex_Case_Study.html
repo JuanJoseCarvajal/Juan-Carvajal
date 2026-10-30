@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>Portfolio - Juan Carvajal</title>
+        <link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
+        <!-- Font Awesome icons (free version)-->
+        <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet" type="text/css" />
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
+        <!-- Swiper CSS -->
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"/>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light bg-primary fixed-top">
+            <a class="navbar-brand js-scroll-trigger" target="_self" href="index.html">
+                <span class="d-none d-lg-block">
+                  <img style="max-width: 25px;" class="img-fluid logo" src="img/close.png" alt="">
+                </span>
+              </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav nav-tab">
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger active" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#problem">Problem</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#solution">Solution</a></li>
+                    <li class="nav-item"><a class="nav-link js-scroll-trigger" href="#result">Result</a></li>
+                </ul>
+            </div>
+        </nav>
+<!-- Page Content-->
+ <!-- Page Content Title-->
+
+ <div class="wizard-label">JUAN <span class="text-accent">CARVAJAL</span> - I’m a WIZARD — Sr. UX/UI and Product Designer</div>
+
+
+      <section class="internal" id="about">
+        <div class="my-auto">
+          <h2 class="mb-5 text-primary">About</h2>
+          <p>With real-time visibility and 24/7 control, you can significantly enhance your supply chain performance. Apex Trajectory™ Cloud is a powerful, enterprise-grade platform that provides immediate insight into your inventory, equipment, tools, products, parcels, and orders—tracking the who, what, when, where, and why of every asset.</p>
+            <img class="internas" src="img/Apex.jpg">
+        </div>
+        
+      </section>
+      <section class="internal" id="problem">
+            <div class="my-auto">
+              <h2 class="mb-5 text-primary">Problem</h2>              
+                <p>The existing Trajectory web applications were designed nearly a decade ago for desktop PCs. Since then, web application design has evolved dramatically, driven by the explosive growth of tablets and smartphones. These hand-held devices have redefined UI/UX standards in the software industry, necessitating a modernized approach that meets current user expectations.</p>
+                <img class="internas" src="img/App_Arquitecture.jpg">
+            </div>
+
+          </section>
+          <section class="internal" id="solution">
+            <div class="my-auto">
+              <h2 class="mb-5 text-primary">Solution</h2>              
+                <p>The Lunar Journey UI Core App is a modern web application tailored for both Lunar Journey’s customer support team and its customers. This solution facilitates the seamless management of accounts, clients, and point-of-use (POU) devices. Key functionalities include:</p>
+                <ul>
+                  <li><strong>Account Management:</strong> Create, update, and terminate accounts.</li>
+                  <li><strong>Client Management:</strong> Create, update, and terminate clients.</li>
+                  <li><strong>POU Device Management:</strong>
+                    <ul>
+                      <li>Register a POU device under an account and/or client.</li>
+                      <li>Transfer a POU device between accounts/clients.</li>
+                      <li>Retire a POU device from an account when necessary.</li>
+                    </ul>
+                  </li>
+                  <li><strong>Device Configuration:</strong> Configure POU devices, including positions, sizes, applications, elements, and functions.</li>
+                  <li><strong>Firmware and Artifact Updates:</strong> Update firmware and related assets (e.g., UI scripts) to keep devices current and secure.</li>
+                </ul>
+                        
+                  <h5 class="mb-5 text-primary">UX Activities</h5>
+                  <p>
+                    Building on comprehensive user investigations provided by Apex, our team collaborated closely through multiple meetings to inform the design process. Our UX approach included:
+                  </p>
+                  <ul>
+                    <li><strong>User Flow Development:</strong> Mapping out the ideal user journeys.</li>
+                    <li><strong>Wireframing:</strong> Creating initial layout designs to visualize the structure and interaction.</li>
+                    <li><strong>Detailed Specifications:</strong> Documenting requirements to guide development and ensure alignment with user needs.</li>
+                  </ul>
+
+                  <div class="gallery">
+                    <img src="img/User_Flow_Apex.jpg" alt="About Image 1" onclick="openModal(this)">
+                    <img src="img/Wireframe_Apex.jpg" alt="About Image 2" onclick="openModal(this)">
+                    <img src="img/Specs_Apex.jpg" alt="About Image 3" onclick="openModal(this)">
+                </div>
+                    
+            </div>
+
+          </section>
+          <section class="internal" id="result">
+              <div class="my-auto">
+                <h2 class="mb-5 text-primary">Result</h2>   
+                <p>The outcome is a responsive web application that delivers an intuitive, efficient, and modern user experience. This solution not only meets the demands of today’s mobile-driven environment but also positions the Lunar Journey UI Core App as a key asset in enhancing customer support and operational efficiency.</p>          
+                    <img class="internas" src="img/resoult_Apex.jpg">    
+              </div>
+  
+            </section>
+
+
+    <!-- Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+      <span class="close">&times;</span>
+      <img class="modal-content" id="modalImg">
+  </div>
+
+   <!-- Bootstrap core JS-->
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+   <!-- Core theme JS-->
+   <script src="js/scripts.js"></script>
+   <script>
+       document.addEventListener("DOMContentLoaded", function () {
+           const navLinks = document.querySelectorAll(".nav-link");
+       
+           navLinks.forEach(link => {
+               link.addEventListener("click", function () {
+                   navLinks.forEach(nav => nav.classList.remove("active"));
+                   this.classList.add("active");
+               });
+           });
+       });
+       </script>
+
+  <script>
+      function openModal(img) {
+          document.getElementById("imageModal").style.display = "flex";
+          document.getElementById("modalImg").src = img.src;
+      }
+
+      function closeModal() {
+          document.getElementById("imageModal").style.display = "none";
+      }
+  </script>
+
+</body>
+</html>
